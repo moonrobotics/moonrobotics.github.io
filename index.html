@@ -1,2 +1,784 @@
-<h1>Welcome to Moonbots!</h1>
-<h1> this is Moon Robotics Club; VEX机器人 team 862  </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moon Robotics · MoonBots VEX 862 · Auckland</title>
+<meta name="description" content="Moon Robotics (MoonBots VEX 862) — Auckland-based VEX Robotics Club. Free workshops, training programs, and competition teams for students aged 6–14.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--primary:#0A1628;
+--accent:#00C8FF;
+--accent2:#FF6B35;
+--gold:#FFB800;
+--surface:#0F2040;
+--surface2:#162840;
+--text:#E8F4FF;
+--text2:#8BAABF;
+--font-en:'Syne',sans-serif;
+--font-zh:'Noto Sans SC',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--primary);color:var(--text);font-family:var(--font-en);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:1000;background:rgba(10,22,40,0.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,200,255,0.15);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer}
+.nav-logo-mark{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#00C8FF,#0F2040);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:#0A1628;flex-shrink:0}
+.nav-logo-text{font-size:16px;font-weight:700;color:var(--text);letter-spacing:.3px}
+.nav-links{display:flex;gap:2px;align-items:center}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:13px;font-weight:600;padding:6px 11px;border-radius:6px;transition:color .2s,background .2s;letter-spacing:.3px;cursor:pointer}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);background:rgba(0,200,255,0.08)}
+.lang-btn{background:rgba(0,200,255,0.12);border:1px solid rgba(0,200,255,0.3);color:var(--accent);border-radius:20px;padding:5px 16px;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.5px;font-family:inherit}
+.lang-btn:hover{background:var(--accent);color:var(--primary)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text2);border-radius:2px;transition:all .3s}
+.mobile-nav{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(10,22,40,0.98);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,200,255,0.15);padding:1rem 2rem;flex-direction:column;gap:4px;z-index:999}
+.mobile-nav a{color:var(--text2);text-decoration:none;font-size:14px;font-weight:600;padding:10px 12px;border-radius:6px;cursor:pointer;display:block}
+.mobile-nav a:hover{color:var(--accent);background:rgba(0,200,255,0.08)}
+.mobile-nav.open{display:flex}
+
+/* PAGES */
+.page{display:none}
+.page.active{display:block}
+
+/* HERO */
+.hero{min-height:93vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:4rem 2rem}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(0,200,255,0.07) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(255,107,53,0.06) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,200,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.04) 1px,transparent 1px);background-size:60px 60px}
+.hero-content{position:relative;max-width:860px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,255,0.1);border:1px solid rgba(0,200,255,0.25);border-radius:20px;padding:6px 18px;font-size:12px;color:var(--accent);margin-bottom:1.5rem;font-weight:600;letter-spacing:.5px}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-title{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;line-height:1.05;margin-bottom:1rem;letter-spacing:-1px}
+.hero-title .accent{color:var(--accent)}
+.hero-title .accent2{color:var(--accent2)}
+.hero-subtitle{font-size:clamp(1rem,2vw,1.2rem);color:var(--text2);margin-bottom:2.5rem;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.7}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:var(--primary);border:none;border-radius:8px;padding:13px 30px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit;letter-spacing:.3px}
+.btn-primary:hover{background:#fff;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--accent);border:1.5px solid rgba(0,200,255,0.4);border-radius:8px;padding:13px 30px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit;letter-spacing:.3px}
+.btn-outline:hover{border-color:var(--accent);background:rgba(0,200,255,0.08);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;flex-wrap:wrap}
+.stat-num{font-size:2rem;font-weight:800;color:var(--accent);line-height:1}
+.stat-label{font-size:12px;color:var(--text2);margin-top:4px;letter-spacing:.5px}
+
+/* SECTION */
+section{padding:5rem 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:.75rem}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:1rem;line-height:1.15}
+.section-desc{color:var(--text2);font-size:15px;max-width:600px;line-height:1.7}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,200,255,0.15),transparent)}
+.surface-bg{background:var(--surface)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
+.about-text p{color:var(--text2);font-size:15px;line-height:1.8;margin-bottom:1rem}
+.about-text strong{color:var(--accent)}
+.about-images{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.img-card{border-radius:10px;overflow:hidden;background:var(--surface2);border:1px solid rgba(0,200,255,0.1);position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.5rem}
+.img-card.tall{aspect-ratio:16/8}
+.img-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;border-radius:10px}
+.img-placeholder{text-align:center}
+.img-placeholder .ico{font-size:2rem}
+.img-placeholder p{font-size:11px;color:var(--text2);margin-top:6px;line-height:1.5}
+
+/* TIMELINE */
+.timeline{margin-top:3rem;position:relative;padding-left:60px}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--accent),rgba(0,200,255,0.05))}
+.tl-item{margin-bottom:2.5rem;position:relative}
+.tl-dot{position:absolute;left:-47px;top:5px;width:15px;height:15px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);box-shadow:0 0 14px rgba(0,200,255,0.5)}
+.tl-year{font-size:12px;font-weight:700;color:var(--accent);margin-bottom:.35rem;letter-spacing:.5px}
+.tl-content h3{font-size:16px;font-weight:700;margin-bottom:.4rem;color:var(--text)}
+.tl-content p{font-size:14px;color:var(--text2);line-height:1.7}
+.award-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,184,0,0.1);border:1px solid rgba(255,184,0,0.3);border-radius:20px;padding:3px 12px;font-size:12px;color:var(--gold);margin-top:8px;font-weight:600;margin-right:6px}
+
+/* MENTORS */
+.mentors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
+.mentor-card{background:var(--surface2);border:1px solid rgba(0,200,255,0.12);border-radius:14px;padding:1.75rem;transition:border-color .25s,transform .25s}
+.mentor-card:hover{border-color:rgba(0,200,255,0.35);transform:translateY(-4px)}
+.mentor-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin-bottom:1rem}
+.av-blue{background:linear-gradient(135deg,var(--accent),rgba(0,200,255,0.3));color:var(--primary)}
+.av-gold{background:linear-gradient(135deg,var(--gold),rgba(255,184,0,0.3));color:var(--primary)}
+.mentor-name{font-size:17px;font-weight:700;margin-bottom:.2rem}
+.mentor-role{font-size:13px;color:var(--accent);margin-bottom:.75rem;font-weight:600}
+.mentor-tag{font-size:13px;color:var(--text2);display:flex;align-items:flex-start;gap:6px;line-height:1.5;margin-bottom:4px}
+.mentor-tag::before{content:'▸';color:var(--accent);font-size:10px;margin-top:4px;flex-shrink:0}
+.photo-pair{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.photo-box{background:var(--surface2);border:1px solid rgba(0,200,255,0.1);border-radius:10px;padding:1rem;flex:1;min-width:260px;overflow:hidden}
+.photo-box img{width:100%;border-radius:8px;max-height:190px;object-fit:cover;display:block}
+.photo-box.gold-border{border-color:rgba(255,184,0,0.2)}
+.photo-caption{font-size:11px;color:var(--text2);margin-top:6px;text-align:center;line-height:1.4}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
+.svc-card{background:var(--primary);border:1px solid rgba(0,200,255,0.1);border-radius:14px;padding:1.75rem;position:relative;overflow:hidden;transition:all .25s}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.svc-card.free::before{background:var(--accent)}
+.svc-card.paid::before{background:var(--accent2)}
+.svc-card.comp::before{background:var(--gold)}
+.svc-card:hover{border-color:rgba(0,200,255,0.3);transform:translateY(-3px)}
+.svc-icon{font-size:28px;margin-bottom:1rem}
+.svc-card h3{font-size:17px;font-weight:700;margin-bottom:.5rem}
+.svc-card p{font-size:13px;color:var(--text2);line-height:1.7}
+.svc-badge{display:inline-block;margin-top:.9rem;font-size:11px;font-weight:700;padding:4px 12px;border-radius:12px;letter-spacing:.5px}
+.badge-free{background:rgba(0,200,255,0.12);color:var(--accent)}
+.badge-enrol{background:rgba(255,107,53,0.12);color:var(--accent2)}
+.badge-apply{background:rgba(255,184,0,0.12);color:var(--gold)}
+
+.locations-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1.5rem}
+.location-card{background:var(--primary);border:1px solid rgba(0,200,255,0.12);border-radius:10px;padding:1rem 1.25rem;text-align:center;transition:border-color .2s}
+.location-card:hover{border-color:rgba(0,200,255,0.3)}
+.location-card h4{font-size:15px;font-weight:700}
+.location-card p{font-size:12px;color:var(--text2);margin-top:3px}
+
+.donation-box{margin-top:3rem;background:linear-gradient(135deg,rgba(0,200,255,0.06),rgba(255,107,53,0.04));border:1px solid rgba(0,200,255,0.15);border-radius:14px;padding:2rem;text-align:center}
+.donation-box h3{font-size:18px;font-weight:700;margin-bottom:.5rem}
+.donation-box p{font-size:13px;color:var(--text2);margin-bottom:1.25rem}
+.paypal-btn{background:#FFC439;color:#003087;border:none;border-radius:8px;padding:11px 28px;font-size:14px;font-weight:800;cursor:pointer;transition:all .2s;font-family:inherit}
+.paypal-btn:hover{background:#FFD570;transform:translateY(-2px)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem}
+.contact-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:1rem;font-size:14px;color:var(--text2);line-height:1.6}
+.contact-icon{width:32px;height:32px;border-radius:8px;background:rgba(0,200,255,0.1);border:1px solid rgba(0,200,255,0.2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.social-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.social-btn{background:var(--surface2);border:1px solid rgba(0,200,255,0.12);border-radius:8px;padding:7px 13px;font-size:12px;color:var(--text2);cursor:pointer;transition:all .2s;font-weight:600;font-family:inherit}
+.social-btn:hover{border-color:var(--accent);color:var(--accent)}
+.contact-form-box{background:var(--surface2);border:1px solid rgba(0,200,255,0.1);border-radius:14px;padding:2rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:11px;font-weight:700;color:var(--text2);margin-bottom:.4rem;letter-spacing:.7px}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(0,200,255,0.15);border-radius:8px;padding:10px 14px;font-size:14px;color:var(--text);font-family:inherit;outline:none;transition:border-color .2s;-webkit-appearance:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:rgba(0,200,255,0.4)}
+.form-group textarea{min-height:90px;resize:vertical}
+.form-group select{background-color:var(--surface2)}
+.form-group select option{background:var(--primary)}
+.form-submit-btn{width:100%;padding:13px;background:var(--accent);color:var(--primary);border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit;letter-spacing:.3px;margin-top:.5rem}
+.form-submit-btn:hover{background:#fff;transform:translateY(-1px)}
+
+/* VEX PAGE */
+.vex-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:3rem}
+.vex-feature{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:.85rem}
+.vex-feature-dot{width:18px;height:18px;border-radius:4px;background:rgba(0,200,255,0.12);border:1px solid rgba(0,200,255,0.25);flex-shrink:0;margin-top:3px}
+.vex-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.vex-stat{background:var(--surface2);border:1px solid rgba(0,200,255,0.1);border-radius:10px;padding:1.25rem;text-align:center}
+.vex-stat-num{font-size:2rem;font-weight:800;color:var(--accent);line-height:1}
+.vex-stat-label{font-size:12px;color:var(--text2);margin-top:4px}
+
+/* KIWIBOTS PAGE */
+.kiwi-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:start;margin-top:3rem}
+.kiwi-feature{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:.75rem}
+.kiwi-feature-arrow{color:var(--accent);font-weight:700;font-size:14px;flex-shrink:0;margin-top:2px}
+.kiwi-img-box{border-radius:12px;overflow:hidden;background:var(--surface2);border:1px solid rgba(0,200,255,0.1);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative}
+.kiwi-img-box img{width:100%;height:100%;object-fit:cover}
+
+/* EXTERNAL LINKS */
+.ext-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.ext-link{display:inline-flex;align-items:center;gap:6px;background:var(--surface2);border:1px solid rgba(0,200,255,0.15);border-radius:8px;padding:9px 16px;font-size:13px;color:var(--text);text-decoration:none;transition:all .2s;font-weight:600}
+.ext-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+
+/* BACK BTN */
+.back-btn{background:transparent;border:1px solid rgba(0,200,255,0.2);color:var(--text2);border-radius:6px;padding:7px 16px;font-size:13px;cursor:pointer;margin-bottom:2.5rem;font-family:inherit;transition:all .2s;display:inline-flex;align-items:center;gap:6px}
+.back-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* FOOTER */
+footer{background:rgba(0,0,0,0.4);border-top:1px solid rgba(0,200,255,0.08);padding:2.5rem 2rem;text-align:center}
+footer p{font-size:13px;color:var(--text2);margin-bottom:4px}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer strong{color:var(--text)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-grid,.vex-grid,.kiwi-grid,.contact-grid{grid-template-columns:1fr}
+  .about-images{grid-template-columns:1fr 1fr}
+  .hero-stats{gap:1.5rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-title{font-size:clamp(2.2rem,8vw,3.5rem)}
+}
+@media(max-width:500px){
+  section{padding:3.5rem 1.25rem}
+  .mentors-grid{grid-template-columns:1fr}
+  .about-images{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-mark">M</div>
+    <span class="nav-logo-text">Moon Robotics</span>
+  </div>
+  <div class="nav-links">
+    <a onclick="navScroll('about')" id="nav-about">About</a>
+    <a onclick="navScroll('history')" id="nav-history">History</a>
+    <a onclick="navScroll('services')" id="nav-services">Services</a>
+    <a onclick="showPage('vex')" id="nav-vex">VEX</a>
+    <a onclick="showPage('kiwibots')" id="nav-kiwi">KIWIbots</a>
+    <a onclick="navScroll('contact')" id="nav-contact">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">中文</button>
+    <div class="hamburger" onclick="toggleMobileNav()" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a onclick="mobileNavScroll('about')" id="mnav-about">About</a>
+  <a onclick="mobileNavScroll('history')" id="mnav-history">History</a>
+  <a onclick="mobileNavScroll('services')" id="mnav-services">Services</a>
+  <a onclick="mobileShowPage('vex')" id="mnav-vex">VEX</a>
+  <a onclick="mobileShowPage('kiwibots')" id="mnav-kiwi">KIWIbots</a>
+  <a onclick="mobileNavScroll('contact')" id="mnav-contact">Contact</a>
+</div>
+
+<!-- ============ HOME PAGE ============ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span id="badge-text">VEX Robotics Club &middot; Auckland, New Zealand &middot; Club #862</span>
+      </div>
+      <h1 class="hero-title">
+        <span id="hl1">Building</span> <span class="accent" id="hl2">Future</span><br>
+        <span class="accent2" id="hl3">Engineers</span> <span id="hl4">in Auckland</span>
+      </h1>
+      <p class="hero-subtitle" id="hero-sub">Moon Robotics (MoonBots 862) — Where young minds learn to design, build, and program award-winning robots. Founded by a World Champion and his dad.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="navScroll('services')" id="btn1">Join a Class</button>
+        <button class="btn-outline" onclick="navScroll('contact')" id="btn2">Book Free Trial</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">#862</div><div class="stat-label" id="s1">VEX Club Number</div></div>
+        <div><div class="stat-num">3</div><div class="stat-label" id="s2">Auckland Locations</div></div>
+        <div><div class="stat-num">&#127942;</div><div class="stat-label" id="s3">World Champion</div></div>
+        <div><div class="stat-num">2x</div><div class="stat-label" id="s4">Volunteer of the Year</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-tag" id="tag-about">About Us</div>
+      <h2 class="section-title" id="ttl-about">A Robotics Club Born<br>from Passion</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p id="ab1">Moon Robotics (<strong>MoonBots VEX 862</strong>) is an Auckland-based VEX Robotics Club founded in <strong>2024</strong> by a father-son duo who have lived the VEX journey from the sidelines all the way to the world stage.</p>
+          <p id="ab2">We serve students across <strong>Central Auckland, North Shore, and East Auckland</strong>, offering free workshops, structured training programmes, and competitive team membership.</p>
+          <p id="ab3">Our mission: make STEM education <strong>fun, accessible, and inspiring</strong> for every young learner aged 6&ndash;14, regardless of prior experience.</p>
+        </div>
+        <div class="about-images">
+          <div class="img-card tall" style="grid-column:span 2">
+            <img src="VEX-Volunteer-IQ-25-26-2.jpg" alt="VEX NZ IQ National Championship Volunteers 2025-26" onerror="this.style.display='none'">
+            <div class="img-placeholder"><div class="ico">&#129302;</div><p id="ph1">VEX NZ IQ Nationals 2025-26<br>Volunteer Team Photo</p></div>
+          </div>
+          <div class="img-card" style="aspect-ratio:4/3">
+            <img src="VEX-Volunteer-Award-2024-25-Evan .PNG" alt="Evan Huang Volunteer Award 2024-25" onerror="this.style.display='none'">
+            <div class="img-placeholder"><div class="ico">&#127885;</div><p id="ph2">Volunteer Award<br>2024-25</p></div>
+          </div>
+          <div class="img-card" style="aspect-ratio:4/3">
+            <img src="父子-Jason-Evan.png" alt="Jason & Evan Huang" onerror="this.style.display='none'">
+            <div class="img-placeholder"><div class="ico">&#128104;&#8205;&#128102;</div><p id="ph3">Jason &amp; Evan Huang<br>MoonBots 862</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HISTORY -->
+  <section id="history" class="surface-bg">
+    <div class="section-inner">
+      <div class="section-tag" id="tag-history">Our Story</div>
+      <h2 class="section-title" id="ttl-history">From Parent Volunteer<br>to Club Founder</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2000</div>
+          <div class="tl-content">
+            <h3 id="tl1h">The Journey Begins</h3>
+            <p id="tl1p">Evan joins Lynfield College&rsquo;s robotics club. Jason becomes a dedicated robotics parent &mdash; driving to competitions, cheering from the sidelines, watching his son discover his passion.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2020s</div>
+          <div class="tl-content">
+            <h3 id="tl2h">Champion &amp; Head Referee</h3>
+            <p id="tl2p">Evan claims VEX National Champion and World Champion titles. Jason joins the volunteer corps &mdash; building fields, managing events, rising through the ranks to become Auckland Head Referee.</p>
+            <span class="award-badge">&#127942; VEX World Champion &mdash; Evan Huang</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2024</div>
+          <div class="tl-content">
+            <h3 id="tl3h">Moon Robotics Founded</h3>
+            <p id="tl3p">Father and son launch Moon Robotics (VEX 862), channeling years of competition experience and volunteer dedication into building the next generation of young engineers across Auckland.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">2024&ndash;26</div>
+          <div class="tl-content">
+            <h3 id="tl4h">Dual Volunteer of the Year Honours</h3>
+            <p id="tl4p">Both Jason and Evan receive VEX New Zealand Volunteer of the Year awards in consecutive seasons &mdash; a remarkable father-son achievement.</p>
+            <span class="award-badge">&#127945; VEX NZ Volunteer of the Year 2024-25 &mdash; Evan Huang</span><br style="margin-bottom:6px">
+            <span class="award-badge">&#127945; VEX NZ Volunteer of the Year 2025-26 &mdash; Jason Huang</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MENTORS -->
+  <section id="mentors">
+    <div class="section-inner">
+      <div class="section-tag" id="tag-mentors">Our Mentors</div>
+      <h2 class="section-title" id="ttl-mentors">Learn from Champions</h2>
+      <div class="mentors-grid">
+        <div class="mentor-card">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:1rem">
+            <div class="mentor-avatar av-blue">J</div>
+            <div>
+              <div class="mentor-name">Mr. Jason Huang</div>
+              <div class="mentor-role" id="mr1">Head Coach &amp; Founder</div>
+            </div>
+          </div>
+          <div class="mentor-tag">VEX Auckland Head Referee</div>
+          <div class="mentor-tag">VEX NZ Volunteer of the Year 2025-26</div>
+          <div class="mentor-tag">MSc Computer Science, University of Auckland</div>
+          <div class="mentor-tag">Caltech Dad</div>
+        </div>
+        <div class="mentor-card">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:1rem">
+            <div class="mentor-avatar av-gold">E</div>
+            <div>
+              <div class="mentor-name">Evan Huang</div>
+              <div class="mentor-role" id="mr2">Senior Mentor &amp; Champion</div>
+            </div>
+          </div>
+          <div class="mentor-tag">VEX Auckland Head Referee</div>
+          <div class="mentor-tag">VEX NZ Volunteer of the Year 2024-25</div>
+          <div class="mentor-tag">VEX Robotics National Champion &#127945;</div>
+          <div class="mentor-tag">VEX Robotics World Champion &#127942;</div>
+          <div class="mentor-tag">California Institute of Technology (Caltech &rsquo;29)</div>
+        </div>
+      </div>
+      <div class="photo-pair">
+        <div class="photo-box">
+          <img src="VEX-Volunteer-Award-2025-26-Jason-.png" alt="Jason Huang VEX NZ Volunteer of the Year 2025-26" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;padding:2.5rem 1rem&quot;><div style=&quot;font-size:3rem&quot;>&#127885;</div><div style=&quot;font-size:12px;color:var(--text2);margin-top:8px&quot;>Jason Huang &mdash; Volunteer of the Year 2025-26</div></div>'">
+          <div class="photo-caption" id="pc1">Jason Huang with VEX NZ Country Manager &mdash; Volunteer of the Year 2025-26</div>
+        </div>
+        <div class="photo-box gold-border">
+          <img src="VEX-Volunteer-IQ-24-25.jpg" alt="VEX NZ IQ Nationals Volunteer Team 2024-25" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;text-align:center;padding:2.5rem 1rem&quot;><div style=&quot;font-size:3rem&quot;>&#127942;</div><div style=&quot;font-size:12px;color:var(--text2);margin-top:8px&quot;>VEX NZ IQ Nationals 2024-25</div></div>'">
+          <div class="photo-caption" id="pc2">VEX NZ IQ National Championship Volunteers 2024-25</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SERVICES -->
+  <section id="services" class="surface-bg">
+    <div class="section-inner">
+      <div class="section-tag" id="tag-services">Programs</div>
+      <h2 class="section-title" id="ttl-services">How to Join</h2>
+      <p class="section-desc" id="desc-services">Three pathways from zero experience to competition-ready.</p>
+      <div class="services-grid">
+        <div class="svc-card free">
+          <div class="svc-icon">&#127891;</div>
+          <h3 id="svc1h">Free Workshop</h3>
+          <p id="svc1p">Drop-in sessions hosted at schools, libraries, and community events across Auckland. No registration required &mdash; just show up and experience robotics for free.</p>
+          <span class="svc-badge badge-free" id="svc1b">FREE</span>
+        </div>
+        <div class="svc-card paid">
+          <div class="svc-icon">&#128295;</div>
+          <h3 id="svc2h">10-Session Training</h3>
+          <p id="svc2p">A structured beginner programme covering VEX IQ building, mechanical design, and entry-level programming. Perfect for students aged 6&ndash;14 with no prior experience.</p>
+          <span class="svc-badge badge-enrol" id="svc2b">Enrol Now</span>
+        </div>
+        <div class="svc-card comp">
+          <div class="svc-icon">&#127942;</div>
+          <h3 id="svc3h">Competition Team</h3>
+          <p id="svc3p">Join a VEX team for the annual season. Design, build, and compete at Auckland regional events and the NZ National Championship alongside champion mentors.</p>
+          <span class="svc-badge badge-apply" id="svc3b">Apply</span>
+        </div>
+      </div>
+
+      <!-- Locations -->
+      <div style="margin-top:3.5rem">
+        <div class="section-tag" id="tag-loc">Locations</div>
+        <div class="locations-grid">
+          <div class="location-card"><h4 id="loc1">Central Auckland</h4><p id="loc1s">New Lynn &amp; surrounds</p></div>
+          <div class="location-card"><h4 id="loc2">North Shore</h4><p id="loc2s">North Shore branches</p></div>
+          <div class="location-card"><h4 id="loc3">East Auckland</h4><p id="loc3s">East Auckland branches</p></div>
+        </div>
+      </div>
+
+      <!-- Donation -->
+      <div class="donation-box">
+        <h3 id="don-h">Support STEM Education</h3>
+        <p id="don-p">Help us keep robotics workshops free for Auckland families. Every donation makes a difference.</p>
+        <button class="paypal-btn">&#128155; Donate via PayPal</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-tag" id="tag-contact">Get in Touch</div>
+      <h2 class="section-title" id="ttl-contact">Join Moon Robotics</h2>
+      <div class="contact-grid">
+        <div>
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:1rem" id="ct-h">Contact Us</h3>
+          <div class="contact-item">
+            <div class="contact-icon">&#128231;</div>
+            <div>moonbots862@gmail.com</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">&#128205;</div>
+            <div id="ct-loc">Auckland, New Zealand<br>Central &middot; North Shore &middot; East</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">&#127760;</div>
+            <div><a href="https://moonrobotics.github.io/" style="color:var(--accent)">moonrobotics.github.io</a></div>
+          </div>
+          <h3 style="font-size:14px;font-weight:700;margin-top:1.75rem;margin-bottom:.75rem;color:var(--text2)" id="ct-social">Follow Us</h3>
+          <div class="social-row">
+            <button class="social-btn">&#24494;&#20449;</button>
+            <button class="social-btn">&#23567;&#32418;&#20070;</button>
+            <button class="social-btn">&#20844;&#20247;&#21495;</button>
+            <button class="social-btn">Facebook</button>
+            <button class="social-btn">Instagram</button>
+          </div>
+          <!-- Sponsors -->
+          <h3 style="font-size:14px;font-weight:700;margin-top:2rem;margin-bottom:.75rem;color:var(--text2)" id="ct-sponsors">Sponsors &amp; Partners</h3>
+          <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+            <div style="background:var(--surface2);border:1px solid rgba(0,200,255,0.1);border-radius:8px;padding:8px 16px;font-size:12px;color:var(--text2);font-weight:600">KIWIbots NZ</div>
+            <div style="background:var(--surface2);border:1px solid rgba(0,200,255,0.1);border-radius:8px;padding:8px 16px;font-size:12px;color:var(--text2);font-weight:600">VEX Robotics</div>
+            <div style="background:var(--surface2);border:1px solid rgba(0,200,255,0.1);border-radius:8px;padding:8px 16px;font-size:12px;color:var(--text2);font-weight:600">RECF</div>
+          </div>
+        </div>
+        <div class="contact-form-box">
+          <h3 style="font-size:15px;font-weight:700;margin-bottom:1.25rem" id="form-ttl">Book a Free Trial Lesson</h3>
+          <div class="form-group">
+            <label id="fl-name">STUDENT NAME</label>
+            <input type="text" id="fi-name" placeholder="Child's name">
+          </div>
+          <div class="form-group" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label id="fl-age">AGE</label>
+              <input type="number" id="fi-age" placeholder="e.g. 10" min="6" max="18">
+            </div>
+            <div>
+              <label id="fl-loc">LOCATION</label>
+              <select id="fi-loc">
+                <option id="fo-c">Central Auckland</option>
+                <option id="fo-n">North Shore</option>
+                <option id="fo-e">East Auckland</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label id="fl-prog">PROGRAM</label>
+            <select id="fi-prog">
+              <option id="fo1">Free Workshop</option>
+              <option id="fo2">10-Session Training</option>
+              <option id="fo3">Competition Team</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label id="fl-msg">MESSAGE</label>
+            <textarea id="fi-msg" placeholder="Questions, preferred time, or anything else..."></textarea>
+          </div>
+          <button class="form-submit-btn" id="form-btn">Send Enquiry</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024&ndash;2026 <strong>Moon Robotics &middot; MoonBots VEX 862</strong> &middot; Auckland, New Zealand</p>
+    <p><a href="https://moonrobotics.github.io/">moonrobotics.github.io</a> &middot; Affiliated with RECF &middot; KIWIbots NZ</p>
+  </footer>
+
+</div><!-- /page-home -->
+
+<!-- ============ VEX PAGE ============ -->
+<div id="page-vex" class="page">
+  <section style="padding:5rem 2rem 2rem">
+    <div class="section-inner">
+      <button class="back-btn" onclick="showPage('home')">&#8592; Back</button>
+      <div class="section-tag" id="vex-tag">VEX Robotics</div>
+      <h2 class="section-title" id="vex-h1">About VEX Robotics</h2>
+      <div class="vex-grid">
+        <div>
+          <p style="color:var(--text2);font-size:15px;line-height:1.8;margin-bottom:1.25rem" id="vex-p1">VEX Robotics is the world&rsquo;s largest and fastest-growing robotics competition, running across 70+ countries and organised by the Robotics Education &amp; Competition Foundation (RECF). It challenges students from age 8 through university to design, build, and program competitive robots.</p>
+          <p style="color:var(--text2);font-size:15px;line-height:1.8;margin-bottom:1.5rem" id="vex-p2">Moon Robotics offers two VEX programmes to Auckland students:</p>
+          <div class="vex-feature"><div class="vex-feature-dot"></div><span id="vf1"><strong style="color:var(--text)">VEX IQ</strong> &mdash; Ages 8&ndash;14. Snap-together plastic components. Focuses on teamwork, design process, and driver skills. Perfect entry point for beginners.</span></div>
+          <div class="vex-feature"><div class="vex-feature-dot"></div><span id="vf2"><strong style="color:var(--text)">VEX V5</strong> &mdash; Ages 12+. Metal construction, V5 smart motors, and advanced programming environments. For students ready to go deeper.</span></div>
+          <div class="vex-feature"><div class="vex-feature-dot"></div><span id="vf3">The annual season runs <strong style="color:var(--accent)">September through April</strong>, culminating in the VEX Robotics World Championship.</span></div>
+          <div class="vex-feature"><div class="vex-feature-dot"></div><span id="vf4">Teams are evaluated on robot <strong style="color:var(--text)">performance, engineering documentation, and interview presentation</strong>.</span></div>
+        </div>
+        <div>
+          <div class="vex-stats">
+            <div class="vex-stat"><div class="vex-stat-num">70+</div><div class="vex-stat-label" id="vbs1">Countries</div></div>
+            <div class="vex-stat"><div class="vex-stat-num">20K+</div><div class="vex-stat-label" id="vbs2">Teams Worldwide</div></div>
+            <div class="vex-stat"><div class="vex-stat-num">6&ndash;18</div><div class="vex-stat-label" id="vbs3">Age Range</div></div>
+            <div class="vex-stat"><div class="vex-stat-num">#1</div><div class="vex-stat-label" id="vbs4">STEM Competition</div></div>
+          </div>
+          <div style="background:var(--surface2);border:1px solid rgba(0,200,255,0.1);border-radius:12px;overflow:hidden">
+            <img src="2023-VEX-IQ-National-championship-Referee.png" alt="VEX IQ National Championship 2023" style="width:100%;max-height:220px;object-fit:cover;display:block" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=&quot;text-align:center;padding:3rem 1rem&quot;><div style=&quot;font-size:3rem&quot;>&#129302;</div><div style=&quot;font-size:12px;color:var(--text2);margin-top:8px&quot;>VEX IQ National Championship 2023 &mdash; Head Referee</div></div>'">
+          </div>
+        </div>
+      </div>
+      <div class="ext-links">
+        <a href="https://recf.org/teams/competition/vex-iq-robotics-competition/" target="_blank" class="ext-link">&#128279; VEX IQ Official Page &#8599;</a>
+        <a href="https://www.vexrobotics.com" target="_blank" class="ext-link">&#128279; VEX Robotics &#8599;</a>
+        <a href="https://www.robotevents.com" target="_blank" class="ext-link">&#128197; VEX Events &#8599;</a>
+        <a href="https://www.robotevents.com/appdownload" target="_blank" class="ext-link">&#128241; Download VEX App &#8599;</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2024&ndash;2026 <strong>Moon Robotics &middot; MoonBots VEX 862</strong> &middot; Auckland, New Zealand</p>
+  </footer>
+</div><!-- /page-vex -->
+
+<!-- ============ KIWIBOTS PAGE ============ -->
+<div id="page-kiwibots" class="page">
+  <section style="padding:5rem 2rem 2rem">
+    <div class="section-inner">
+      <button class="back-btn" onclick="showPage('home')">&#8592; Back</button>
+      <div class="section-tag" id="kiwi-tag">KIWIbots NZ</div>
+      <h2 class="section-title" id="kiwi-h1">VEX Robotics in New Zealand</h2>
+      <div class="kiwi-grid">
+        <div>
+          <p style="color:var(--text2);font-size:15px;line-height:1.8;margin-bottom:1rem" id="kp1">KIWIbots is New Zealand&rsquo;s official organiser for VEX IQ and V5 Robotics competitions. Each year they run regional qualifiers and the National Championship, bringing together hundreds of student teams from across the country.</p>
+          <p style="color:var(--text2);font-size:15px;line-height:1.8;margin-bottom:1.5rem" id="kp2">Moon Robotics is proud to be an active part of the KIWIbots community. Both our mentors serve as Auckland Head Referees and have been recognised as VEX NZ Volunteers of the Year.</p>
+          <div class="kiwi-feature"><div class="kiwi-feature-arrow">&#8594;</div><span id="kf1">Annual VEX IQ and V5 competitions held across New Zealand</span></div>
+          <div class="kiwi-feature"><div class="kiwi-feature-arrow">&#8594;</div><span id="kf2">Regional qualifiers in Auckland, Wellington, Christchurch, and more</span></div>
+          <div class="kiwi-feature"><div class="kiwi-feature-arrow">&#8594;</div><span id="kf3">National Champions qualify to represent NZ at the VEX World Championship</span></div>
+          <div class="kiwi-feature"><div class="kiwi-feature-arrow">&#8594;</div><span id="kf4">Skills-only events and scrimmages available throughout the season</span></div>
+          <div class="ext-links">
+            <a href="https://www.kiwibots.co.nz/" target="_blank" class="ext-link">&#129374; KIWIbots Official Site &#8599;</a>
+            <a href="https://www.robotevents.com" target="_blank" class="ext-link">&#128197; Find NZ Events &#8599;</a>
+          </div>
+        </div>
+        <div>
+          <div class="kiwi-img-box" style="margin-bottom:1rem">
+            <img src="kiwibots.avif" alt="KIWIbots NZ" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=&quot;text-align:center;padding:3rem&quot;><div style=&quot;font-size:4rem&quot;>&#129374;</div><div style=&quot;font-size:14px;color:var(--text2);margin-top:12px;font-weight:700&quot;>KIWIbots NZ</div><div style=&quot;font-size:12px;color:var(--text2);margin-top:4px&quot;>New Zealand VEX Robotics</div></div>'">
+          </div>
+          <div style="background:var(--surface2);border:1px solid rgba(0,200,255,0.1);border-radius:10px;overflow:hidden">
+            <img src="VEX-Volunteers-V5-2025-JPG.avif" alt="VEX V5 Nationals Volunteer Team 2025" style="width:100%;max-height:180px;object-fit:cover;display:block" onerror="this.style.display='none';this.parentElement.innerHTML+='<div style=&quot;text-align:center;padding:2rem&quot;><div style=&quot;font-size:2.5rem&quot;>&#129309;</div><div style=&quot;font-size:12px;color:var(--text2);margin-top:6px&quot;>VEX NZ V5 Nationals 2025<br>Volunteer Team</div></div>'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2024&ndash;2026 <strong>Moon Robotics &middot; MoonBots VEX 862</strong> &middot; Auckland, New Zealand</p>
+  </footer>
+</div><!-- /page-kiwibots -->
+
+<script>
+// ===== TRANSLATIONS =====
+const T = {
+  en: {
+    'nav-about':'About','nav-history':'History','nav-services':'Services','nav-vex':'VEX','nav-kiwi':'KIWIbots','nav-contact':'Contact',
+    'mnav-about':'About','mnav-history':'History','mnav-services':'Services','mnav-vex':'VEX','mnav-kiwi':'KIWIbots','mnav-contact':'Contact',
+    'langBtn':'中文',
+    'badge-text':'VEX Robotics Club &middot; Auckland, New Zealand &middot; Club #862',
+    'hl1':'Building','hl2':'Future','hl3':'Engineers','hl4':'in Auckland',
+    'hero-sub':'Moon Robotics (MoonBots 862) — Where young minds learn to design, build, and program award-winning robots. Founded by a World Champion and his dad.',
+    'btn1':'Join a Class','btn2':'Book Free Trial',
+    's1':'VEX Club Number','s2':'Auckland Locations','s3':'World Champion','s4':'Volunteer of the Year',
+    'tag-about':'About Us','ttl-about':'A Robotics Club Born<br>from Passion',
+    'ab1':'Moon Robotics (<strong>MoonBots VEX 862</strong>) is an Auckland-based VEX Robotics Club founded in <strong>2024</strong> by a father-son duo who have lived the VEX journey from the sidelines all the way to the world stage.',
+    'ab2':'We serve students across <strong>Central Auckland, North Shore, and East Auckland</strong>, offering free workshops, structured training programmes, and competitive team membership.',
+    'ab3':'Our mission: make STEM education <strong>fun, accessible, and inspiring</strong> for every young learner aged 6&ndash;14, regardless of prior experience.',
+    'ph1':'VEX NZ IQ Nationals 2025-26<br>Volunteer Team Photo','ph2':'Volunteer Award<br>2024-25','ph3':'Jason &amp; Evan Huang<br>MoonBots 862',
+    'tag-history':'Our Story','ttl-history':'From Parent Volunteer<br>to Club Founder',
+    'tl1h':'The Journey Begins','tl1p':'Evan joins Lynfield College\'s robotics club. Jason becomes a dedicated robotics parent &mdash; driving to competitions, cheering from the sidelines, watching his son discover his passion.',
+    'tl2h':'Champion &amp; Head Referee','tl2p':'Evan claims VEX National Champion and World Champion titles. Jason joins the volunteer corps &mdash; building fields, managing events, rising to Auckland Head Referee.',
+    'tl3h':'Moon Robotics Founded','tl3p':'Father and son launch Moon Robotics (VEX 862), channeling years of competition experience into building the next generation of young engineers across Auckland.',
+    'tl4h':'Dual Volunteer of the Year Honours','tl4p':'Both Jason and Evan receive VEX New Zealand Volunteer of the Year awards in consecutive seasons &mdash; a remarkable father-son achievement.',
+    'tag-mentors':'Our Mentors','ttl-mentors':'Learn from Champions',
+    'mr1':'Head Coach &amp; Founder','mr2':'Senior Mentor &amp; Champion',
+    'pc1':'Jason Huang with VEX NZ Country Manager &mdash; Volunteer of the Year 2025-26',
+    'pc2':'VEX NZ IQ National Championship Volunteers 2024-25',
+    'tag-services':'Programs','ttl-services':'How to Join','desc-services':'Three pathways from zero experience to competition-ready.',
+    'svc1h':'Free Workshop','svc1p':'Drop-in sessions hosted at schools, libraries, and community events across Auckland. No registration required &mdash; just show up and experience robotics for free.','svc1b':'FREE',
+    'svc2h':'10-Session Training','svc2p':'A structured beginner programme covering VEX IQ building, mechanical design, and entry-level programming. Perfect for students aged 6&ndash;14.','svc2b':'Enrol Now',
+    'svc3h':'Competition Team','svc3p':'Join a VEX team for the annual season. Design, build, and compete at Auckland regional events and the NZ National Championship.','svc3b':'Apply',
+    'tag-loc':'Locations','loc1':'Central Auckland','loc1s':'New Lynn &amp; surrounds','loc2':'North Shore','loc2s':'North Shore branches','loc3':'East Auckland','loc3s':'East Auckland branches',
+    'don-h':'Support STEM Education','don-p':'Help us keep robotics workshops free for Auckland families. Every donation makes a difference.',
+    'tag-contact':'Get in Touch','ttl-contact':'Join Moon Robotics',
+    'ct-h':'Contact Us','ct-loc':'Auckland, New Zealand<br>Central &middot; North Shore &middot; East','ct-social':'Follow Us','ct-sponsors':'Sponsors &amp; Partners',
+    'form-ttl':'Book a Free Trial Lesson',
+    'fl-name':'STUDENT NAME','fl-age':'AGE','fl-loc':'LOCATION','fl-prog':'PROGRAM','fl-msg':'MESSAGE',
+    'fo-c':'Central Auckland','fo-n':'North Shore','fo-e':'East Auckland',
+    'fo1':'Free Workshop','fo2':'10-Session Training','fo3':'Competition Team',
+    'form-btn':'Send Enquiry',
+    'vex-tag':'VEX Robotics','vex-h1':'About VEX Robotics',
+    'vex-p1':'VEX Robotics is the world\'s largest and fastest-growing robotics competition, running across 70+ countries and organised by the Robotics Education &amp; Competition Foundation (RECF).',
+    'vex-p2':'Moon Robotics offers two VEX programmes to Auckland students:',
+    'vf1':'<strong style="color:var(--text)">VEX IQ</strong> &mdash; Ages 8&ndash;14. Snap-together plastic components. Focuses on teamwork, design process, and driver skills. Perfect entry point for beginners.',
+    'vf2':'<strong style="color:var(--text)">VEX V5</strong> &mdash; Ages 12+. Metal construction, V5 smart motors, and advanced programming. For students ready to go deeper.',
+    'vf3':'The annual season runs <strong style="color:var(--accent)">September through April</strong>, culminating in the VEX Robotics World Championship.',
+    'vf4':'Teams are evaluated on <strong style="color:var(--text)">robot performance, engineering documentation, and interview presentation</strong>.',
+    'vbs1':'Countries','vbs2':'Teams Worldwide','vbs3':'Age Range','vbs4':'STEM Competition',
+    'kiwi-tag':'KIWIbots NZ','kiwi-h1':'VEX Robotics in New Zealand',
+    'kp1':'KIWIbots is New Zealand\'s official organiser for VEX IQ and V5 Robotics competitions, running regional qualifiers and the National Championship each year.',
+    'kp2':'Moon Robotics is proud to be an active part of the KIWIbots community. Both our mentors serve as Auckland Head Referees and have been recognised as VEX NZ Volunteers of the Year.',
+    'kf1':'Annual VEX IQ and V5 competitions held across New Zealand','kf2':'Regional qualifiers in Auckland, Wellington, Christchurch, and more',
+    'kf3':'National Champions qualify to represent NZ at the VEX World Championship','kf4':'Skills-only events and scrimmages available throughout the season',
+  },
+  zh: {
+    'nav-about':'关于我们','nav-history':'历史','nav-services':'服务','nav-vex':'VEX介绍','nav-kiwi':'KIWIbots','nav-contact':'联系',
+    'mnav-about':'关于我们','mnav-history':'历史','mnav-services':'服务','mnav-vex':'VEX介绍','mnav-kiwi':'KIWIbots','mnav-contact':'联系我们',
+    'langBtn':'English',
+    'badge-text':'VEX机器人俱乐部 &middot; 新西兰奥克兰 &middot; 俱乐部编号 #862',
+    'hl1':'培养','hl2':'未来','hl3':'工程师','hl4':'在奥克兰',
+    'hero-sub':'Moon Robotics（MoonBots 862）—— 奥克兰青少年学习设计、搭建和编程机器人的摇篮。由世界冠军父子携手创立。',
+    'btn1':'立即报名','btn2':'预约免费试课',
+    's1':'VEX俱乐部编号','s2':'奥克兰分部','s3':'世界冠军','s4':'年度志愿者',
+    'tag-about':'关于我们','ttl-about':'因热爱而生的<br>机器人俱乐部',
+    'ab1':'Moon Robotics（<strong>MoonBots VEX 862</strong>）是一家位于奥克兰的VEX机器人俱乐部，由父子二人于<strong>2024年</strong>共同创立，他们从赛场边的陪伴家长，走向了世界冠军的舞台。',
+    'ab2':'我们在<strong>奥克兰中区、北岸和东区</strong>均设有分部，提供免费公开课、系统培训班和参赛组队服务。',
+    'ab3':'我们的使命：让6至14岁的每一位孩子都能以<strong>有趣、平等、充满启发</strong>的方式接触STEM教育，无需任何基础。',
+    'ph1':'VEX新西兰IQ全国锦标赛<br>志愿者团队合影 2025-26','ph2':'年度志愿者奖项<br>2024-25','ph3':'Jason &amp; Evan Huang<br>MoonBots 862',
+    'tag-history':'我们的故事','ttl-history':'从陪伴家长<br>到俱乐部创始人',
+    'tl1h':'缘起','tl1p':'儿子Evan升入Lynfield College高中，加入学校机器人俱乐部。Jason成为陪伴家长，在赛场边为孩子加油，见证他不断成长。',
+    'tl2h':'冠军与首席裁判','tl2p':'Evan荣获VEX全国冠军和世界冠军。Jason加入志愿者队伍，参与搭建赛场、管理赛事，成长为奥克兰首席裁判。',
+    'tl3h':'Moon Robotics正式成立','tl3p':'父子二人携手创立Moon Robotics（VEX 862），将多年的参赛经验和志愿精神转化为培养奥克兰下一代工程师的力量。',
+    'tl4h':'双料年度志愿者荣誉','tl4p':'Jason与Evan连续两个赛季分别荣获VEX新西兰年度志愿者称号，这是难得的父子传承。',
+    'tag-mentors':'教练团队','ttl-mentors':'向冠军学习',
+    'mr1':'主教练 &middot; 创始人','mr2':'高级导师 &middot; 世界冠军',
+    'pc1':'Jason Huang与VEX新西兰Country Manager合影<br>年度志愿者 2025-26',
+    'pc2':'VEX新西兰IQ全国锦标赛志愿者团队合影 2024-25',
+    'tag-services':'课程项目','ttl-services':'加入方式','desc-services':'三条途径供您选择——从零基础到参赛实战。',
+    'svc1h':'免费公开课','svc1p':'在学校、图书馆和社区活动中举办的免费体验课，无需报名，随到随学，零基础轻松上手。','svc1b':'免费',
+    'svc2h':'10节系列培训课','svc2p':'系统入门培训，涵盖VEX IQ搭建、机械设计和初级编程，专为6至14岁零基础学生设计。','svc2b':'立即报名',
+    'svc3h':'参赛组队','svc3p':'加入VEX年度赛季战队，在冠军导师带领下，参加奥克兰地区赛和全国锦标赛。','svc3b':'申请加入',
+    'tag-loc':'分部地点','loc1':'奥克兰中区','loc1s':'新林恩及周边','loc2':'北岸','loc2s':'北岸各分部','loc3':'东区','loc3s':'东区各分部',
+    'don-h':'支持STEM教育','don-p':'帮助我们为奥克兰家庭维持免费公开课。您的每一份支持都意义重大。',
+    'tag-contact':'联系我们','ttl-contact':'加入Moon Robotics',
+    'ct-h':'联系方式','ct-loc':'新西兰奥克兰<br>中区 &middot; 北岸 &middot; 东区','ct-social':'关注我们','ct-sponsors':'赞助商与合作伙伴',
+    'form-ttl':'预约免费试课',
+    'fl-name':'学生姓名','fl-age':'年龄','fl-loc':'分部地点','fl-prog':'课程选择','fl-msg':'留言',
+    'fo-c':'奥克兰中区','fo-n':'北岸','fo-e':'东区',
+    'fo1':'免费公开课','fo2':'10节系列培训','fo3':'参赛组队',
+    'form-btn':'发送咨询',
+    'vex-tag':'VEX机器人','vex-h1':'关于VEX机器人竞赛',
+    'vex-p1':'VEX机器人竞赛是全球规模最大、增长最快的中小学机器人竞赛，覆盖70余个国家，由机器人教育与竞赛基金会（RECF）主办。',
+    'vex-p2':'Moon Robotics为奥克兰学员提供两个VEX参赛项目：',
+    'vf1':'<strong style="color:var(--text)">VEX IQ</strong> &mdash; 适合8至14岁。卡扣式塑料零件，注重团队协作、设计思维与驾驶技能，是初学者的理想入门选择。',
+    'vf2':'<strong style="color:var(--text)">VEX V5</strong> &mdash; 适合12岁以上。金属零件，V5智能电机，高级编程。适合有一定基础、希望深入学习的学员。',
+    'vf3':'竞赛赛季每年<strong style="color:var(--accent)">9月至次年4月</strong>举行，最终角逐VEX机器人世界锦标赛资格。',
+    'vf4':'评审维度包括机器人<strong style="color:var(--text)">比赛成绩、工程设计文档和现场问答表现</strong>。',
+    'vbs1':'参赛国家','vbs2':'全球队伍数量','vbs3':'适用年龄','vbs4':'STEM竞赛排名',
+    'kiwi-tag':'KIWIbots新西兰','kiwi-h1':'新西兰VEX机器人竞赛',
+    'kp1':'KIWIbots是新西兰官方VEX IQ和V5机器人竞赛承办方，每年举办各地区资格赛及全国锦标赛，汇聚全国数百支青少年战队。',
+    'kp2':'Moon Robotics是KIWIbots社区的积极成员。我们的两位教练均担任奥克兰首席裁判，并荣获VEX新西兰年度志愿者称号。',
+    'kf1':'每年举办覆盖全国的VEX IQ和V5机器人竞赛','kf2':'全国各地区资格赛：奥克兰、惠灵顿、基督城等',
+    'kf3':'全国冠军晋级VEX机器人世界锦标赛，代表新西兰出征','kf4':'赛季内设有技能赛和友谊赛',
+  }
+};
+
+let lang = 'en';
+
+function applyLang(l) {
+  const t = T[l];
+  for (const [id, val] of Object.entries(t)) {
+    const el = document.getElementById(id);
+    if (!el) continue;
+    const tag = el.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA') {
+      // handled separately
+    } else if (tag === 'OPTION') {
+      el.textContent = val.replace(/&amp;/g,'&').replace(/&middot;/g,'·').replace(/&ndash;/g,'–').replace(/&mdash;/g,'—').replace(/&rsquo;/g,"'");
+    } else {
+      el.innerHTML = val;
+    }
+  }
+  const phs = {
+    'fi-name': l==='zh'?'孩子的姓名':"Child's name",
+    'fi-age':  l==='zh'?'例如：10岁':'e.g. 10',
+    'fi-msg':  l==='zh'?'问题、偏好地点或时间...':'Questions, preferred time, or anything else...',
+  };
+  for (const [id, ph] of Object.entries(phs)) {
+    const el = document.getElementById(id);
+    if (el) el.placeholder = ph;
+  }
+  document.body.style.fontFamily = l==='zh'?"'Noto Sans SC', sans-serif":"'Syne', sans-serif";
+}
+
+function toggleLang() {
+  lang = lang==='en'?'zh':'en';
+  applyLang(lang);
+}
+
+function showPage(p) {
+  document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+  document.getElementById('page-' + p).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function navScroll(id) {
+  if (!document.getElementById('page-home').classList.contains('active')) {
+    showPage('home');
+    setTimeout(() => document.getElementById(id)?.scrollIntoView({behavior:'smooth'}), 80);
+  } else {
+    document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  }
+}
+
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+function mobileNavScroll(id) {
+  document.getElementById('mobileNav').classList.remove('open');
+  navScroll(id);
+}
+
+function mobileShowPage(p) {
+  document.getElementById('mobileNav').classList.remove('open');
+  showPage(p);
+}
+
+// Form submit
+document.getElementById('form-btn').addEventListener('click', function() {
+  const name = document.getElementById('fi-name').value.trim();
+  if (!name) { alert(lang==='zh'?'请填写学生姓名':'Please enter student name'); return; }
+  alert(lang==='zh'?'感谢您的咨询！我们会尽快联系您。':'Thank you! We will get back to you soon.');
+});
+</script>
+</body>
+</html>
