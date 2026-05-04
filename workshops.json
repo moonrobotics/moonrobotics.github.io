@@ -1,0 +1,94 @@
+{
+  "workshops": [
+    {
+      "date": "2026-05-04",
+      "time_en": "3:00pm – 5:00pm",
+      "time_cn": "下午3时至5时",
+      "location_en": "Avondale Library",
+      "location_cn": "Avondale图书馆",
+      "area_en": "Central Auckland",
+      "area_cn": "奥克兰中区",
+      "ages": "6–15",
+      "note_en": "FREE · No experience needed",
+      "note_cn": "免费 · 无需基础"
+    },
+        {
+      "date": "2026-06-06",
+      "time_en": "11:00am – 12:00pm",
+      "time_cn": "上午11时至12时",
+      "location_en": "New Lynn Library",
+      "location_cn": "New Lynn图书馆",
+      "area_en": "Central Auckland",
+      "area_cn": "奥克兰中区",
+      "ages": "6–15",
+      "note_en": "FREE · No experience needed",
+      "note_cn": "免费 · 无需基础"
+    },
+    {
+      "date": "2026-07-13",
+      "time_en": "10:30am – 12:00pm",
+      "time_cn": "上午10时30分至12时",
+      "location_en": "Papakura Library",
+      "location_cn": "Papakura图书馆",
+      "area_en": "Manukau",
+      "area_cn": "南区",
+      "ages": "6–15",
+      "note_en": "FREE · No experience needed",
+      "note_cn": "免费 · 无需基础"
+    },
+      {
+      "date": "2026-05-24",
+      "time_en": "11:00am – 12:00pm",
+      "time_cn": "上午11时至12时",
+      "location_en": "Highland Park Library",
+      "location_cn": "Highland Park图书馆",
+      "area_en": "East Auckland",
+      "area_cn": "东区",
+      "ages": "6–15",
+      "note_en": "FREE · No experience needed",
+      "note_cn": "免费 · 无需基础"
+    },
+          {
+      "date": "2026-06-28",
+      "time_en": "11:00am – 12:00pm",
+      "time_cn": "上午11时至12时",
+      "location_en": "Highland Park Library",
+      "location_cn": "Highland Park图书馆",
+      "area_en": "East Auckland",
+      "area_cn": "东区",
+      "ages": "6–15",
+      "note_en": "FREE · No experience needed",
+      "note_cn": "免费 · 无需基础"
+    },
+          {
+      "date": "2026-09-13",
+      "time_en": "10:30am – 12:00pm",
+      "time_cn": "上午10时30分至12时",
+      "location_en": "Highland Park Library",
+      "location_cn": "Albany图书馆",
+      "area_en": "North Shore",
+      "area_cn": "北岸",
+      "ages": "6–15",
+      "note_en": "FREE · No experience needed",
+      "note_cn": "免费 · 无需基础"
+    },
+    {
+      "date": "2026-10-21",
+      "time_en": "2:00pm – 4:00pm",
+      "time_cn": "下午2时至4时",
+      "location_en": "Henderson Library",
+      "location_cn": "Henderson图书馆",
+      "area_en": "West Auckland",
+      "area_cn": "西区",
+      "ages": "6–15",
+      "note_en": "FREE · No experience needed",
+      "note_cn": "免费 · 无需基础"
+    }
+
+
+
+
+
+
+  ]
+}
