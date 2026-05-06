@@ -202,8 +202,10 @@ img{display:block;max-width:100%}
 /* Hero logos — left & right, bigger */
 .hero-logo-l{position:absolute;top:1rem;left:1.5rem;z-index:2}
 .hero-logo-r{position:absolute;top:1rem;right:1.5rem;z-index:2}
-.hero-logo-l img{height:192px;width:192px;object-fit:contain}
-.hero-logo-r img{height:192px;width:auto;max-width:280px;object-fit:contain}
+.hero-logo-l img{height:160px;width:auto;max-width:120px;object-fit:contain}
+.hero-logo-r img{height:100px;width:auto;max-width:100px;object-fit:contain}
+/* V33: wrapper is invisible on desktop — logos are absolute */
+.hero-logos-row{display:contents}
 .hero-content{position:relative;max-width:820px;text-align:center}
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;
@@ -420,6 +422,8 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 
 /* ── CONTACT (V9) ── */
 .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.ct-grid>.ct-left{display:flex;flex-direction:column}
+.ct-grid>.cf-wrap-col{display:flex;flex-direction:column;justify-content:flex-start}
 .ct-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.8rem;font-size:14px;color:var(--txt2);line-height:1.6}
 .ct-ico{width:30px;height:30px;border-radius:7px;background:rgba(0,98,204,.09);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
 .soc-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
@@ -471,8 +475,8 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
   display:flex;justify-content:space-between;align-items:center;
   max-width:100%;margin:0 auto 0;padding:0;flex-wrap:nowrap;gap:.5rem;
 }
-.ft-ml{height:107px;width:auto;max-width:200px;object-fit:contain;margin-left:0}
-.ft-ct{height:142px;width:auto;max-width:220px;object-fit:contain;margin-right:0}
+.ft-ml{height:107px;width:auto;max-width:80px;object-fit:contain;margin-left:0}
+.ft-ct{height:107px;width:auto;max-width:80px;object-fit:contain;margin-right:0}
 .ft-mid{flex:1;text-align:center;padding:0 .5rem;display:flex;flex-direction:column;justify-content:center;gap:0}
 .ft-mid .ftname{font-size:13px;font-weight:800;color:var(--txt);line-height:1.4}
 .ft-mid .ftsub{font-size:11.5px;color:var(--txt2);line-height:1.4}
@@ -543,16 +547,60 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
   .stat-i{min-width:50%;border-bottom:1px solid var(--border)}
   .ct-grid{grid-template-columns:1fr}
 }
+@media(max-width:768px){
+  /* V33 mobile: Featured — left col above right col */
+  #robots .si > div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important;
+  }
+  /* V33 mobile: Workshop — vertical stack */
+  .workshop-cta > div[style*="grid-template-columns"]{
+    grid-template-columns:1fr !important;
+  }
+}
 @media(max-width:600px){
   .g2,.g3,.g4{grid-template-columns:1fr}
   #nav-links{display:none}
   #hamburger{display:flex}
   .sec{padding:3rem 1.25rem}
-  .hero-logo-l img{height:64px;width:64px}
-  .hero-logo-r img{height:64px}
   .tw-inner{min-width:12ch}
   .pathway{flex-wrap:wrap}
   .pw-step{min-width:50%}
+
+  /* V33 mobile: Hero logos — show as top row */
+  .hero-logos-row{
+    display:flex !important;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    padding:0;
+    margin-bottom:.5rem;
+    position:relative;
+  }
+  .hero-logo-l,.hero-logo-r{
+    position:static !important;
+  }
+  .hero-logo-l img{height:72px !important;width:auto !important;max-width:54px !important}
+  .hero-logo-r img{height:56px !important;width:auto !important;max-width:56px !important}
+  .hero-content{
+    position:static;
+    transform:none;
+    text-align:center;
+    padding:0;
+    width:100%;
+  }
+
+  /* V33 mobile: Footer — logos row on top, text below */
+  .ft-logos{
+    flex-direction:column;
+    align-items:center;
+    gap:.5rem;
+  }
+  .ft-logos-top{
+    display:flex;justify-content:center;gap:2rem;
+    width:100%;margin-bottom:.5rem;
+  }
+  .ft-ml,.ft-ct{margin:0}
+  .ft-mid{text-align:center;width:100%}
 }
 </style>
 </head>
@@ -599,13 +647,16 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 <!-- HERO -->
 <section id="home" class="sec" style="padding:0">
 <div id="hero">
-  <div class="hero-logo-l">
-    <img src="moon-robotics-moonbots-862-logo.png" alt="Moon Robotics MoonBots VEX 862 Auckland robotics club logo"
-         onerror="this.style.display='none'">
-  </div>
-  <div class="hero-logo-r">
-    <img src="caltech-california-institute-technology-logo.png" alt="Caltech California Institute of Technology logo — partner of Moon Robotics Auckland"
-         onerror="this.style.display='none'">
+  <!-- V33: logos wrapped for mobile-first stacking -->
+  <div class="hero-logos-row">
+    <div class="hero-logo-l">
+      <img src="moon-robotics-moonbots-862-logo.png" alt="Moon Robotics MoonBots VEX 862 Auckland robotics club logo"
+           onerror="this.style.display='none'">
+    </div>
+    <div class="hero-logo-r">
+      <img src="caltech-california-institute-technology-logo.png" alt="Caltech California Institute of Technology logo — partner of Moon Robotics Auckland"
+           onerror="this.style.display='none'">
+    </div>
   </div>
   <div class="hero-content">
     <div class="hero-badge">
@@ -671,12 +722,12 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 
       </div>
 
-      <!-- Bottom: Level Up Field — V31: reduced height -->
+      <!-- Bottom: Level Up Field — V33: full-width cover -->
       <div class="rob-card" style="flex:1">
-        <div style="flex:1;background:#f0f7ff;display:flex;align-items:center;justify-content:center;padding:.75rem;border-bottom:1px solid var(--border);min-height:180px">
+        <div style="background:#f0f7ff;border-bottom:1px solid var(--border);overflow:hidden;height:150px">
           <img src="Level-Up-Field-Element.jpg"
                alt="VEX IQ Level Up 2026-2027 game field element — Moon Robotics Auckland competition training"
-               style="max-height:100%;max-width:100%;width:100%;object-fit:contain"
+               style="width:100%;height:100%;object-fit:cover;object-position:center"
                onerror="this.parentElement.style.background='#e8f4ff'">
         </div>
         <div class="rob-body">
@@ -810,21 +861,23 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 <section class="sec surf" id="mentors">
 <div class="si">
   <div class="stag" data-en="Our Mentors" data-cn="我们的导师">Our Mentors</div>
-  <h2 class="sttl" data-en="VEX World Champion Coaches — Moon Robotics Auckland" data-cn="VEX世界冠军教练团队">VEX World Champion Coaches — Moon Robotics Auckland</h2>
+  <h2 class="sttl" data-en="VEX World Champion Coaches" data-cn="VEX世界冠军教练团队">VEX World Champion Coaches</h2>
+  <h3 style="font-size:clamp(1rem,2vw,1.3rem);font-weight:700;color:var(--txt2);margin-top:-.4rem;margin-bottom:1.5rem"
+      data-en="— Moon Robotics Auckland" data-cn="— 奥克兰 Moon Robotics">— Moon Robotics Auckland</h3>
   <div class="g2">
 
     <!-- Jason: text TOP, photo MIDDLE, caption BOTTOM -->
     <div class="mcard">
       <div class="mbody" style="border-bottom:1px solid var(--border)">
-        <div class="mname">Mr. Jason Huang</div>
+        <div class="mname">👨‍🏫 Mr. Jason Huang</div>
         <div class="mrole" data-en="Head Coach &amp; Founder" data-cn="主教练兼创始人">Head Coach &amp; Founder</div>
-        <ul style="list-style:none;margin-top:.7rem;display:flex;flex-direction:column;gap:4px">
-          <li style="font-size:13.5px;color:var(--txt2);display:flex;align-items:flex-start;gap:6px"><span style="color:var(--acc);flex-shrink:0">▸</span>VEX Auckland Head Referee</li>
-          <li style="font-size:13.5px;color:var(--acc2);font-weight:700;display:flex;align-items:flex-start;gap:6px"><span style="flex-shrink:0">🥇</span>VEX NZ Volunteer of the Year 2025-26</li>
-          <li style="font-size:13.5px;color:var(--txt2);display:flex;align-items:flex-start;gap:6px"><span style="color:var(--acc);flex-shrink:0">▸</span>MSc Computer Science, University of Auckland</li>
-          <li style="font-size:13.5px;color:var(--txt2);display:flex;align-items:flex-start;gap:6px"><span style="color:var(--acc);flex-shrink:0">▸</span>World Champion Coach</li>
-          <li style="font-size:13.5px;color:var(--txt2);display:flex;align-items:flex-start;gap:6px"><span style="color:var(--acc);flex-shrink:0">▸</span>10+ Years Mentoring STEM</li>
-          <li style="font-size:13.5px;color:var(--txt2);display:flex;align-items:flex-start;gap:6px"><span style="color:var(--acc);flex-shrink:0">▸</span>Caltech Dad</li>
+        <ul style="list-style:none;margin-top:.7rem;display:flex;flex-direction:column;gap:5px">
+          <li style="font-size:13.5px;color:var(--txt2)">⚖️ VEX Auckland Head Referee</li>
+          <li style="font-size:13.5px;color:var(--acc2);font-weight:700">🏅 VEX NZ Volunteer of the Year 2025-26</li>
+          <li style="font-size:13.5px;color:var(--txt2)">🎓 MSc Computer Science, University of Auckland</li>
+          <li style="font-size:13.5px;color:var(--txt2)">🌍 World Champion Coach</li>
+          <li style="font-size:13.5px;color:var(--txt2)">⏳ 10+ Years Mentoring STEM</li>
+          <li style="font-size:13.5px;color:var(--txt2)">🏠 Caltech Dad</li>
         </ul>
       </div>
       <img class="mphoto" src="jason-huang-vex-nz-volunteer-year-award-2025-26.png"
@@ -837,15 +890,15 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     <!-- Evan: text TOP, photo MIDDLE, caption BOTTOM -->
     <div class="mcard">
       <div class="mbody" style="border-bottom:1px solid var(--border)">
-        <div class="mname">Evan Huang</div>
+        <div class="mname">👨‍🎓 Evan Huang</div>
         <div class="mrole" data-en="Senior Mentor &amp; Champion" data-cn="高级导师兼冠军">Senior Mentor &amp; Champion</div>
-        <ul style="list-style:none;margin-top:.7rem;display:flex;flex-direction:column;gap:4px">
-          <li style="font-size:13.5px;color:var(--txt2);display:flex;align-items:flex-start;gap:6px"><span style="color:var(--acc);flex-shrink:0">▸</span>VEX Auckland Head Referee</li>
-          <li style="font-size:13.5px;color:var(--acc2);font-weight:700;display:flex;align-items:flex-start;gap:6px"><span style="flex-shrink:0">🥇</span>VEX NZ Volunteer of the Year 2024-25</li>
-          <li style="font-size:13.5px;color:var(--gold);font-weight:700;display:flex;align-items:flex-start;gap:6px"><span style="flex-shrink:0">🥇</span>VEX V5 National Champion 2022</li>
-          <li style="font-size:13.5px;color:var(--gold);font-weight:700;display:flex;align-items:flex-start;gap:6px"><span style="flex-shrink:0">🏆</span>VEX V5 Engineering Challenge World Champion 2022</li>
-          <li style="font-size:13.5px;color:var(--txt2);display:flex;align-items:flex-start;gap:6px"><span style="color:var(--acc);flex-shrink:0">▸</span>4× VEX World Championship</li>
-          <li style="font-size:13.5px;color:var(--txt2);display:flex;align-items:flex-start;gap:6px"><span style="color:var(--acc);flex-shrink:0">▸</span>California Institute of Technology (Caltech '29)</li>
+        <ul style="list-style:none;margin-top:.7rem;display:flex;flex-direction:column;gap:5px">
+          <li style="font-size:13.5px;color:var(--txt2)">⚖️ VEX Auckland Head Referee</li>
+          <li style="font-size:13.5px;color:var(--acc2);font-weight:700">🎖️ VEX NZ Volunteer of the Year 2024-25</li>
+          <li style="font-size:13.5px;color:var(--gold);font-weight:700">🏆 VEX V5 National Champion 2022</li>
+          <li style="font-size:13.5px;color:var(--gold);font-weight:700">🏆 VEX V5 Engineering Challenge World Champion 2022</li>
+          <li style="font-size:13.5px;color:var(--txt2)">✈️ 4× VEX World Championship</li>
+          <li style="font-size:13.5px;color:var(--txt2)">🏛️ California Institute of Technology (Caltech '29, AI + Robotics)</li>
         </ul>
       </div>
       <img class="mphoto" src="evan-huang-vex-nz-volunteer-year-award-2024-25.png"
@@ -864,7 +917,9 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 <section class="sec" id="programs">
 <div class="si">
   <div class="stag" data-en="Programs" data-cn="课程体系">Programs</div>
-  <h2 class="sttl" data-en="VEX IQ Robotics Training Auckland&lt;br&gt;— Programs for Ages 6–15" data-cn="奥克兰VEX机器人培训课程">VEX IQ Robotics Training Auckland<br>— Programs for Ages 6–15</h2>
+  <h2 class="sttl" data-en="VEX IQ Robotics Training Auckland" data-cn="奥克兰VEX IQ机器人培训">VEX IQ Robotics Training Auckland</h2>
+  <h3 style="font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:700;color:var(--txt2);margin-top:-.4rem;margin-bottom:1.5rem"
+      data-en="— Programs for Ages 6–15" data-cn="— 适合6至15岁的课程体系">— Programs for Ages 6–15</h3>
   <div class="g4">
     <div class="pcard">
       <div class="pico">🎓</div>
@@ -1052,7 +1107,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
   <h2 class="sttl" data-en="Join Moon Robotics" data-cn="加入Moon Robotics">Join Moon Robotics</h2>
   <div class="ct-grid">
     <!-- Left: contact info, follow us, sponsors -->
-    <div>
+    <div class="ct-left">
       <h3 style="font-size:15px;font-weight:800;margin-bottom:1rem" data-en="Contact Us" data-cn="联系方式">Contact Us</h3>
       <div class="ct-item"><div class="ct-ico">📍</div><div data-en="Auckland NZ — Central · North Shore · East · West · South" data-cn="新西兰奥克兰 — 中区·北岸·东区·西区·南区">Auckland NZ — Central · North Shore · East · West · South</div></div>
       <div class="ct-item"><div class="ct-ico">🌐</div><div><a href="https://moonrobotics.github.io/" style="color:var(--acc)">moonrobotics.github.io</a></div></div>
@@ -1137,7 +1192,8 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     </div><!-- end left col -->
 
     <!-- Right: Book a lesson form -->
-    <div class="cf-wrap">
+    <div class="cf-wrap-col">
+    <div class="cf-wrap" style="margin-top:0">
       <h3 data-en="Book a Free Trial Lesson or any Inquiry" data-cn="预约免费试课或任何咨询">Book a Free Trial Lesson or any Inquiry</h3>
       <div class="fg">
         <label data-en="STUDENT NAME *" data-cn="学生姓名 *">STUDENT NAME *</label>
@@ -1197,23 +1253,28 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
       <p style="font-size:11px;color:var(--txt2);margin-bottom:.6rem">* <span data-en="Required fields. Date / Phone / WeChat are optional." data-cn="必填项。日期/电话/微信号为选填。">Required fields. Date / Phone / WeChat are optional.</span></p>
       <button class="form-sub" onclick="submitForm()" data-en="Send Enquiry" data-cn="发送咨询">Send Enquiry</button>
 
-    </div>
-  </div>
+    </div><!-- /cf-wrap -->
+    </div><!-- /cf-wrap-col -->
+  </div><!-- /ct-grid -->
 </div>
 </section>
 
-<!-- FOOTER (V24: compact, logos at edges, text lines centred) -->
+<!-- FOOTER (V33: updated logo sizes + link text) -->
 <footer id="footer">
   <div class="ft-logos">
-    <img class="ft-ml" src="moon-robotics-moonbots-862-logo.png" alt="Moon Robotics MoonBots VEX 862 Auckland robotics club logo" onerror="this.style.display='none'">
+    <img class="ft-ml" src="moon-robotics-moonbots-862-logo.png"
+         alt="Moon Robotics MoonBots VEX 862 Auckland robotics club logo"
+         onerror="this.style.display='none'">
     <div class="ft-mid">
       <div class="ftname">Moon Robotics · MoonBots VEX 862</div>
       <div class="ftsub">Auckland, New Zealand</div>
-      <p><a href="https://moonrobotics.github.io/" rel="noopener">moonrobotics.github.io</a> · <a href="https://www.kiwibots.co.nz/" target="_blank" rel="noopener">KIWIbots NZ</a> · <a href="https://www.vexrobotics.com" target="_blank" rel="noopener">VEX Robotics</a></p>
+      <p><a href="https://moonrobotics.github.io/" rel="noopener">Moon Robotics</a> · <a href="https://www.kiwibots.co.nz/" target="_blank" rel="noopener">Kiwibots</a> · <a href="https://www.vexrobotics.com" target="_blank" rel="noopener">VEX Robotics</a></p>
       <p class="ft-tags"><span>#VEXRobotics</span> <span>#STEMEducation</span> <span>#FutureEngineers</span> <span>#AucklandRobotics</span></p>
       <p>© 2024–2026 Moon Robotics (MoonBots 862). All rights reserved. · Auckland, New Zealand</p>
     </div>
-    <img class="ft-ct" src="caltech-california-institute-technology-logo.png" alt="Caltech California Institute of Technology logo — partner of Moon Robotics Auckland" onerror="this.style.display='none'">
+    <img class="ft-ct" src="caltech-california-institute-technology-logo.png"
+         alt="Caltech California Institute of Technology logo — partner of Moon Robotics Auckland"
+         onerror="this.style.display='none'">
   </div>
 </footer>
 
@@ -1253,8 +1314,8 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
          onerror="this.parentElement.style.display='none'">
   </div>
   <p style="font-size:12px;color:var(--txt2);text-align:center;margin-top:.3rem;margin-bottom:2rem"
-     data-en="VEX New Zealand National Championships — KIWIbots Auckland"
-     data-cn="VEX新西兰全国锦标赛 — KIWIbots奥克兰">VEX New Zealand National Championships — KIWIbots Auckland</p>
+     data-en="VEX New Zealand National Championships"
+     data-cn="VEX新西兰全国锦标赛">VEX New Zealand National Championships</p>
 
   <!-- Stats -->
   <div class="stats-bar">
@@ -1427,8 +1488,8 @@ function showPage(id) {
   }
   curPage = id;
   closeMob();
-  // V30: highlight nav tab using setNavActive for sub-pages
-  if (SUBPAGE_MAP && SUBPAGE_MAP[id]) {
+  // V32: highlight nav tab using setNavActive for sub-pages
+  if (typeof SUBPAGE_MAP !== 'undefined' && SUBPAGE_MAP[id]) {
     setNavActive(SUBPAGE_MAP[id]);
   } else {
     document.querySelectorAll('#nav-links a, #mobile-nav a').forEach(function(a){ a.classList.remove('active'); });
@@ -1643,11 +1704,11 @@ function submitForm(){
   });
 }
 
-// ── V31: NAV ACTIVE HIGHLIGHT — refined scroll detection ─────────────
+// ── V32: NAV ACTIVE HIGHLIGHT — precise scroll + click ───────────────
 var NAV_MAP = {
-  'home':     "navHome",
-  'about':    "navScroll('about')",
+  'home':     'navHome',
   'robots':   "navScroll('robots')",
+  'about':    "navScroll('about')",
   'mentors':  "navScroll('mentors')",
   'programs': "navScroll('programs')",
   'locations':"navScroll('locations')",
@@ -1659,51 +1720,66 @@ var SUBPAGE_MAP = {
   'vex':      "showPage('vex')"
 };
 
+// Sections in DOM order (only those that have nav links)
+var NAV_SECTION_IDS = ['robots','about','mentors','programs','awards','contact'];
+var NAV_HEIGHT = 62;
+var _navScrollLock = false;   // true while programmatic scroll is in progress
+var _navLockTimer  = null;
+
 function setNavActive(onclickStr) {
   document.querySelectorAll('#nav-links a, #mobile-nav a').forEach(function(a) {
     var fn = a.getAttribute('onclick') || '';
-    a.classList.toggle('active', fn.indexOf(onclickStr) !== -1);
+    a.classList.toggle('active', fn === onclickStr || fn.trim() === onclickStr.trim());
   });
 }
 
-// Use scroll event for precise highlight — find which section's top is closest to nav bottom
-var allSections = Array.from(document.querySelectorAll('#page-home section[id]'));
-var NAV_HEIGHT = 62;
+function getActiveSection() {
+  var scrollY = window.scrollY || window.pageYOffset;
+  var viewTop  = scrollY + NAV_HEIGHT + 20;
+  var active   = null;
+  for (var i = 0; i < NAV_SECTION_IDS.length; i++) {
+    var el = document.getElementById(NAV_SECTION_IDS[i]);
+    if (!el) continue;
+    var top = el.getBoundingClientRect().top + scrollY;
+    if (top <= viewTop) active = NAV_SECTION_IDS[i];
+  }
+  return active;
+}
 
 function updateNavOnScroll() {
   if (curPage !== 'home') return;
-  var scrollY = window.scrollY || window.pageYOffset;
-  var viewTop = scrollY + NAV_HEIGHT + 10; // small offset for comfort
-
-  // Find the last section whose top is above current viewTop
-  var active = null;
-  for (var i = 0; i < allSections.length; i++) {
-    var sec = allSections[i];
-    var top = sec.getBoundingClientRect().top + scrollY;
-    if (top <= viewTop) {
-      active = sec;
-    }
-  }
-
-  if (active && NAV_MAP[active.id]) {
-    setNavActive(NAV_MAP[active.id]);
-  } else if (scrollY < 50) {
-    // At very top — no section highlighted
-    document.querySelectorAll('#nav-links a, #mobile-nav a').forEach(function(a){ a.classList.remove('active'); });
+  if (_navScrollLock) return;      // skip while programmatic scroll running
+  var id = getActiveSection();
+  if (id && NAV_MAP[id]) {
+    setNavActive(NAV_MAP[id]);
+  } else {
+    document.querySelectorAll('#nav-links a, #mobile-nav a')
+            .forEach(function(a){ a.classList.remove('active'); });
   }
 }
 
 window.addEventListener('scroll', updateNavOnScroll, { passive: true });
-// Initial call
-updateNavOnScroll();
 
-// Override navScroll to immediately highlight on click
+// Override navScroll: lock observer → set highlight immediately → unlock after scroll settles
 var _origNavScroll = navScroll;
 navScroll = function(id) {
-  _origNavScroll(id);
+  // Lock observer so scroll event doesn't overwrite our highlight
+  _navScrollLock = true;
+  clearTimeout(_navLockTimer);
+
+  // Immediately set the correct highlight
   if (NAV_MAP[id]) setNavActive(NAV_MAP[id]);
+
+  // Perform the scroll
+  _origNavScroll(id);
+
+  // Unlock after scroll animation completes (~700ms for smooth scroll)
+  _navLockTimer = setTimeout(function() {
+    _navScrollLock = false;
+    updateNavOnScroll(); // sync with actual scroll position
+  }, 800);
 };
-// ── END V31 NAV HIGHLIGHT ─────────────────────────────────────────────
+// ── END V32 NAV HIGHLIGHT ─────────────────────────────────────────────
 
 // ── V24: WORKSHOPS LOADER ─────────────────────────────────────────────
 // Reads workshops.json — to update workshops, ONLY edit workshops.json
