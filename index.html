@@ -75,7 +75,8 @@
   jason-huang-vex-nz-volunteer-year-award-2025-26.png        — Mentors: Jason award photo
   evan-huang-vex-nz-volunteer-year-award-2024-25.png         — Mentors: Evan award photo
   vex-v5-clawbot-with-remote-controller.webp                 — Robots: VEX V5 Clawbot + remote
-  vex-iq-mix-and-match-2025-26-game-field-auckland.webp      — Robots: VEX IQ field side view
+  vex-iq-mix-and-match-2025-26-game-field-auckland.webp      — Robots: VEX IQ Mix&Match field (2025-26)
+  Level-Up-Field-Element.jpg                                 — Robots: VEX IQ Level Up field (2026-27) ★NEW V28
   vex-iq-clawbot-sensors-starter-robot-kit.webp              — Robots: VEX IQ Clawbot + sensors
   vex-iq-national-championship-referee-auckland-2023.png     — Featured: NZ nationals referee 2023
   vex-v5-national-championship-volunteer-team-nz-2025.avif   — Kiwibots: V5 accolades photo
@@ -647,41 +648,41 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     <!-- LEFT column: IQ card (image left, text right) + full-width MixandMatch -->
     <div style="display:flex;flex-direction:column;gap:1.25rem">
 
-      <!-- IQ card: image LEFT, text RIGHT -->
+      <!-- IQ card: logo+text LEFT, clawbot image RIGHT — V31 -->
       <div class="rob-card" style="flex-direction:row;align-items:stretch">
-        <!-- Image side -->
-        <div style="width:50%;background:#f0f7ff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.75rem;border-right:1px solid var(--border)">
-          <div style="display:flex;align-items:center;justify-content:center;margin-bottom:.5rem">
-            <img src="vex-iq-robotics-competition-logo-full-color.png"
-                 alt="VEX IQ Robotics Competition logo — Moon Robotics Auckland, ages 6–15"
-                 style="max-height:40px;max-width:100%;object-fit:contain"
-                 onerror="this.style.display='none'">
-          </div>
+
+        <!-- Left: IQ logo on top, then text, top-aligned -->
+        <div class="rob-body" style="width:50%;display:flex;flex-direction:column;justify-content:flex-start;padding:1rem;border-right:1px solid var(--border)">
+          <img src="vex-iq-robotics-competition-logo-full-color.png"
+               alt="VEX IQ Robotics Competition logo — Moon Robotics Auckland, ages 6–15"
+               style="max-height:36px;max-width:100%;object-fit:contain;margin-bottom:.6rem;align-self:flex-start"
+               onerror="this.style.display='none'">
+          <div class="rob-ttl" style="margin-bottom:.4rem" data-en="Ages 6–15" data-cn="适合6–15岁">Ages 6–15</div>
+          <div class="rob-desc" data-en="Plastic snap-together kits. Teamwork, programming &amp; design." data-cn="积木拼插套件。团队合作、编程与设计。">Plastic snap-together kits.<br>Teamwork, programming &amp; design.</div>
+        </div>
+
+        <!-- Right: clawbot image, top-aligned -->
+        <div style="width:50%;background:#f0f7ff;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:.75rem">
           <img src="vex-iq-clawbot-sensors-starter-robot-kit.webp"
                alt="VEX IQ Clawbot robot with sensors Moon Robotics Auckland training"
-               style="max-height:130px;max-width:100%;object-fit:contain"
+               style="max-height:160px;max-width:100%;object-fit:contain;margin-top:.25rem"
                onerror="this.parentElement.style.background='#e8f4ff'">
         </div>
-        <!-- Text side -->
-        <div class="rob-body" style="width:50%;justify-content:center">
-          <div class="rob-tag" style="color:var(--acc)">VEX IQ</div>
-          <div class="rob-ttl" data-en="Ages 6–15" data-cn="适合6–15岁">Ages 6–15</div>
-          <div class="rob-desc" data-en="Plastic snap-together kits. Teamwork, programming &amp; design." data-cn="积木拼插套件。团队合作、编程与设计。">Plastic snap-together kits. Teamwork, programming &amp; design.</div>
-        </div>
+
       </div>
 
-      <!-- Bottom: Match Field — full width of left col = same width as right referee photo -->
+      <!-- Bottom: Level Up Field — V31: reduced height -->
       <div class="rob-card" style="flex:1">
-        <div style="flex:1;background:#f0f7ff;display:flex;align-items:center;justify-content:center;padding:.75rem;border-bottom:1px solid var(--border);min-height:280px">
-          <img src="vex-iq-mix-and-match-2025-26-game-field-auckland.webp"
-               alt="VEX IQ Mix and Match competition field Auckland NZ 2025-26 season"
+        <div style="flex:1;background:#f0f7ff;display:flex;align-items:center;justify-content:center;padding:.75rem;border-bottom:1px solid var(--border);min-height:180px">
+          <img src="Level-Up-Field-Element.jpg"
+               alt="VEX IQ Level Up 2026-2027 game field element — Moon Robotics Auckland competition training"
                style="max-height:100%;max-width:100%;width:100%;object-fit:contain"
                onerror="this.parentElement.style.background='#e8f4ff'">
         </div>
         <div class="rob-body">
-          <div class="rob-tag" style="color:var(--acc)">2025–26 SEASON</div>
-          <div class="rob-ttl" data-en="Mix &amp; Match — Official Game Field" data-cn="Mix &amp; Match 官方比赛场地">Mix &amp; Match — Official Game Field</div>
-          <div class="rob-desc" data-en="VEX IQ 2025–26 season: two-robot alliance sorts and stacks scoring elements on a 6×8 ft field." data-cn="VEX IQ 2025-26赛季：双机器人联盟在6×8英尺场地上完成分类和堆叠得分元素。">VEX IQ 2025–26 season: two-robot alliance sorts and stacks scoring elements.</div>
+          <div class="rob-tag" style="color:var(--acc)">2026–27 SEASON</div>
+          <div class="rob-ttl" data-en="VEX IQ Robotics Competition: Level Up | 2026-2027 Game" data-cn="VEX IQ机器人竞赛：Level Up | 2026-2027赛季">VEX IQ Robotics Competition: Level Up | 2026-2027 Game</div>
+          <div class="rob-desc" data-en="The new 2026-27 VEX IQ game — Moon Robotics Auckland students are already training for next season." data-cn="全新2026-27赛季VEX IQ比赛——Moon Robotics奥克兰学员已开始备战新赛季。">The new 2026-27 VEX IQ game — Moon Robotics Auckland students are already training for next season.</div>
         </div>
       </div>
 
@@ -863,7 +864,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 <section class="sec" id="programs">
 <div class="si">
   <div class="stag" data-en="Programs" data-cn="课程体系">Programs</div>
-  <h2 class="sttl" data-en="VEX IQ Robotics Training Auckland — Programs for Ages 6–15" data-cn="奥克兰VEX机器人培训课程">VEX IQ Robotics Training Auckland — Programs for Ages 6–15</h2>
+  <h2 class="sttl" data-en="VEX IQ Robotics Training Auckland&lt;br&gt;— Programs for Ages 6–15" data-cn="奥克兰VEX机器人培训课程">VEX IQ Robotics Training Auckland<br>— Programs for Ages 6–15</h2>
   <div class="g4">
     <div class="pcard">
       <div class="pico">🎓</div>
@@ -975,12 +976,15 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     <div class="award-card acc-card">
       <div class="award-ico">🏅</div>
       <div class="award-title" style="color:var(--acc)" data-en="4× Worlds" data-cn="4次世界赛">4× Worlds</div>
-      <div class="award-desc" data-en="VEX World Championship: 2020–2023" data-cn="VEX世界锦标赛：2020–2023">VEX World Championship: 2020–2023</div>
+      <div class="award-desc">
+        <span data-en="VEX World Championship" data-cn="VEX世界锦标赛">VEX World Championship</span><br>
+        <span data-en="2020–2023" data-cn="2020–2023">2020–2023</span>
+      </div>
     </div>
     <div class="award-card acc-card">
       <div class="award-ico">🌟</div>
       <div class="award-title" style="color:var(--acc)" data-en="2× Volunteer of Year" data-cn="2次年度义工">2× Volunteer of Year</div>
-      <div class="award-desc">
+      <div class="award-desc" style="white-space:nowrap">
         <span data-en="VEX NZ Volunteer of the Year 2024-25" data-cn="VEX新西兰年度义工 2024-25">VEX NZ Volunteer of the Year 2024-25</span><br>
         <span data-en="VEX NZ Volunteer of the Year 2025-26" data-cn="VEX新西兰年度义工 2025-26">VEX NZ Volunteer of the Year 2025-26</span>
       </div>
@@ -998,7 +1002,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
       <div style="background:rgba(0,98,204,.08);border:1px solid rgba(0,98,204,.2);border-radius:8px;padding:.6rem 1rem;text-align:center;flex:1;min-width:130px">
         <div style="font-size:11px;font-weight:700;color:var(--acc);text-transform:uppercase;letter-spacing:.05em">Training Program</div>
         <div style="font-size:13px;font-weight:800;color:var(--txt);margin:.2rem 0">Jan – Dec</div>
-        <div style="font-size:11px;color:var(--txt2)" data-en="Full year · All Auckland" data-cn="全年 · 全奥克兰">Full year · All Auckland</div>
+        <div style="font-size:11px;color:var(--txt2)" data-en="5 Locations · Auckland" data-cn="5个培训点 · 奥克兰">5 Locations · Auckland</div>
       </div>
       <div style="font-size:1.4rem;color:var(--acc)">→</div>
       <div style="background:rgba(0,150,100,.08);border:1px solid rgba(0,150,100,.2);border-radius:8px;padding:.6rem 1rem;text-align:center;flex:1;min-width:130px">
@@ -1010,7 +1014,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
       <div style="background:rgba(180,120,0,.08);border:1px solid rgba(180,120,0,.2);border-radius:8px;padding:.6rem 1rem;text-align:center;flex:1;min-width:130px">
         <div style="font-size:11px;font-weight:700;color:#8a6000;text-transform:uppercase;letter-spacing:.05em">National Championship</div>
         <div style="font-size:13px;font-weight:800;color:var(--txt);margin:.2rem 0">Dec</div>
-        <div style="font-size:11px;color:var(--txt2)" data-en="NZ Nationals · Auckland" data-cn="新西兰全国赛">NZ Nationals · Auckland</div>
+        <div style="font-size:11px;color:var(--txt2)" data-en="Palmerston North, NZ" data-cn="北帕墨斯顿，新西兰">Palmerston North, NZ</div>
       </div>
       <div style="font-size:1.4rem;color:var(--acc)">→</div>
       <div style="background:rgba(180,30,30,.08);border:1px solid rgba(180,30,30,.2);border-radius:8px;padding:.6rem 1rem;text-align:center;flex:1;min-width:130px">
@@ -1050,7 +1054,6 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     <!-- Left: contact info, follow us, sponsors -->
     <div>
       <h3 style="font-size:15px;font-weight:800;margin-bottom:1rem" data-en="Contact Us" data-cn="联系方式">Contact Us</h3>
-      <div class="ct-item"><div class="ct-ico">📧</div><div><a href="mailto:moonbots862@gmail.com" style="color:var(--acc)">moonbots862@gmail.com</a></div></div>
       <div class="ct-item"><div class="ct-ico">📍</div><div data-en="Auckland NZ — Central · North Shore · East · West · South" data-cn="新西兰奥克兰 — 中区·北岸·东区·西区·南区">Auckland NZ — Central · North Shore · East · West · South</div></div>
       <div class="ct-item"><div class="ct-ico">🌐</div><div><a href="https://moonrobotics.github.io/" style="color:var(--acc)">moonrobotics.github.io</a></div></div>
 
@@ -1121,6 +1124,16 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
         </div>
       </div>
 
+      <!-- V28: Support STEM Education below Sponsors & Partners -->
+      <div style="margin-top:1rem;padding:1rem 1.1rem;background:rgba(0,98,204,.04);border:1px solid rgba(0,98,204,.15);border-radius:var(--r)">
+        <div style="font-size:13px;font-weight:700;margin-bottom:.3rem;color:var(--txt)">
+          ❤️ <span data-en="Support STEM Education" data-cn="支持STEM教育">Support STEM Education</span>
+        </div>
+        <p style="font-size:12.5px;color:var(--txt2);line-height:1.6;margin:0"
+           data-en="Donate or sponsor us — help us keep robotics workshops free for Auckland families."
+           data-cn="捐款或赞助我们——帮助我们为奥克兰家庭维持免费公开课。">Donate or sponsor us — help us keep robotics workshops free for Auckland families.</p>
+      </div>
+
     </div><!-- end left col -->
 
     <!-- Right: Book a lesson form -->
@@ -1155,28 +1168,35 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
         <label data-en="PROGRAM *" data-cn="课程 *">PROGRAM *</label>
         <select id="f-prog" required>
           <option value="" data-en="Select program" data-cn="选择课程">Select program</option>
+          <option data-en="Free Trial Lesson" data-cn="免费试课">Free Trial Lesson</option>
           <option data-en="Free Workshop" data-cn="免费公开课">Free Workshop</option>
           <option data-en="Training Program: 5/10 Sessions" data-cn="培训课程：5/10节">Training Program: 5/10 Sessions</option>
           <option data-en="Competition Team" data-cn="参赛组队">Competition Team</option>
           <option data-en="Club Incubation" data-cn="俱乐部孵化">Club Incubation</option>
         </select>
       </div>
+      <!-- V31: optional fields — Date, Phone, WeChat -->
+      <div class="fg-row">
+        <div class="fg">
+          <label data-en="PREFERRED DATE" data-cn="希望日期">PREFERRED DATE</label>
+          <input type="text" id="f-date" placeholder="e.g. any Saturday" data-ph-en="e.g. any Saturday" data-ph-cn="如：周六均可">
+        </div>
+        <div class="fg">
+          <label data-en="PHONE" data-cn="电话">PHONE</label>
+          <input type="tel" id="f-phone" placeholder="e.g. 021 000 0000" data-ph-en="e.g. 021 000 0000" data-ph-cn="如：021 000 0000">
+        </div>
+      </div>
+      <div class="fg">
+        <label data-en="WECHAT ID" data-cn="微信号">WECHAT ID</label>
+        <input type="text" id="f-wechat" placeholder="WeChat ID (optional)" data-ph-en="WeChat ID (optional)" data-ph-cn="微信号（可选）">
+      </div>
       <div class="fg">
         <label data-en="MESSAGE *" data-cn="留言 *">MESSAGE *</label>
         <textarea id="f-msg" placeholder="Questions, preferred time or location..." data-ph-en="Questions, preferred time or location..." data-ph-cn="问题、偏好时间或地点..." required></textarea>
       </div>
-      <p style="font-size:11px;color:var(--txt2);margin-bottom:.6rem">* <span data-en="All fields are required" data-cn="所有项目为必填">All fields are required</span></p>
+      <p style="font-size:11px;color:var(--txt2);margin-bottom:.6rem">* <span data-en="Required fields. Date / Phone / WeChat are optional." data-cn="必填项。日期/电话/微信号为选填。">Required fields. Date / Phone / WeChat are optional.</span></p>
       <button class="form-sub" onclick="submitForm()" data-en="Send Enquiry" data-cn="发送咨询">Send Enquiry</button>
 
-      <!-- V23: Support STEM below form -->
-      <div style="margin-top:1.2rem;padding:1.1rem 1.2rem;background:rgba(0,98,204,.04);border:1px solid rgba(0,98,204,.15);border-radius:var(--r)">
-        <div style="font-size:13.5px;font-weight:700;margin-bottom:.4rem;color:var(--txt)">
-          ❤️ <span data-en="Support STEM Education" data-cn="支持STEM教育">Support STEM Education</span>
-        </div>
-        <p style="font-size:13px;color:var(--txt2);line-height:1.6"
-           data-en="Donate or sponsor us — help us keep robotics workshops free for Auckland families."
-           data-cn="捐款或赞助我们——帮助我们为奥克兰家庭维持免费公开课。">Donate or sponsor us — help us keep robotics workshops free for Auckland families.</p>
-      </div>
     </div>
   </div>
 </div>
@@ -1233,8 +1253,8 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
          onerror="this.parentElement.style.display='none'">
   </div>
   <p style="font-size:12px;color:var(--txt2);text-align:center;margin-top:.3rem;margin-bottom:2rem"
-     data-en="KIWIbots Auckland VEX IQ Scrimmage — New Zealand robotics competition"
-     data-cn="KIWIbots奥克兰VEX IQ资格赛 — 新西兰机器人竞赛">KIWIbots Auckland VEX IQ Scrimmage — New Zealand robotics competition</p>
+     data-en="VEX New Zealand National Championships — KIWIbots Auckland"
+     data-cn="VEX新西兰全国锦标赛 — KIWIbots奥克兰">VEX New Zealand National Championships — KIWIbots Auckland</p>
 
   <!-- Stats -->
   <div class="stats-bar">
@@ -1400,7 +1420,6 @@ function showPage(id) {
     if (id === 'kiwibots' || id === 'vex') {
       target.scrollTop = 0;
     } else {
-      // Home page: scroll window to top
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -1408,13 +1427,12 @@ function showPage(id) {
   }
   curPage = id;
   closeMob();
-  // V18: highlight nav tab
-  document.querySelectorAll('#nav-links a, #mobile-nav a').forEach(function(a){
-    var fn = a.getAttribute('onclick') || '';
-    var isActive = fn.indexOf("showPage('"+id+"')") !== -1 ||
-                   fn.indexOf("mShowPage('"+id+"')") !== -1;
-    a.classList.toggle('active', isActive);
-  });
+  // V30: highlight nav tab using setNavActive for sub-pages
+  if (SUBPAGE_MAP && SUBPAGE_MAP[id]) {
+    setNavActive(SUBPAGE_MAP[id]);
+  } else {
+    document.querySelectorAll('#nav-links a, #mobile-nav a').forEach(function(a){ a.classList.remove('active'); });
+  }
 }
 
 function navHome() {
@@ -1427,7 +1445,9 @@ function navHome() {
   if (hp) hp.classList.add('active');
   curPage = 'home';
   closeMob();
+  // Clear active — observer re-highlights correct section as user scrolls
   document.querySelectorAll('#nav-links a, #mobile-nav a').forEach(function(a){ a.classList.remove('active'); });
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 }
 
 function navScroll(id) {
@@ -1462,11 +1482,12 @@ var twWords = { en: ['Engineers','Innovators','STEM Leaders'], cn: ['工程师',
 
 function toggleLang() {
   lang = (lang === 'en') ? 'cn' : 'en';
-  applyLang();
+  applyLang(true); // V29: true = scroll to top after language switch
   twWordList = twWords[lang];
+  renderWorkshopsFromCache(); // V24: re-render workshop cards in new language
 }
 
-function applyLang() {
+function applyLang(scrollTop) {
   var cn = (lang === 'cn');
   document.getElementById('lang-btn').textContent = cn ? 'English' : '中文';
   document.body.style.fontFamily = cn
@@ -1493,9 +1514,18 @@ function applyLang() {
     el.placeholder = cn ? (el.getAttribute('data-ph-cn') || '') : (el.getAttribute('data-ph-en') || '');
   });
 
-  // V26: hide "Future" span in hero for CN (避免"培养未来的Future")
+  // V26: hide "Future" span in hero for CN
   var hf = document.getElementById('hero-future');
   if (hf) hf.style.display = cn ? 'none' : '';
+
+  // V29: scroll to top on language switch; if on sub-page go home first
+  if (scrollTop) {
+    if (curPage !== 'home') {
+      navHome();
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
+  }
 }
 
 applyLang();
@@ -1523,7 +1553,7 @@ function twTick() {
 twTick();
 
 // ── FORM ──
-function submitForm() {
+function submitForm(){
   var name  = (document.getElementById('f-name')  || {value:''}).value.trim();
   var email = (document.getElementById('f-email') || {value:''}).value.trim();
   var age   = (document.getElementById('f-age')   || {value:''}).value.trim();
@@ -1537,39 +1567,143 @@ function submitForm() {
     alert(isCn ? '请填写所有必填项（标有 * 的项目）。' : 'Please fill in all required fields (marked with *).');
     return;
   }
-  // Basic email check
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     alert(isCn ? '请输入有效的电子邮件地址。' : 'Please enter a valid email address.');
     return;
   }
 
-  var subject = encodeURIComponent('Moon Robotics Enquiry — ' + name);
-  var body = encodeURIComponent(
-    'Student Name: ' + name + '\n' +
-    'Parent / Contact Email: ' + email + '\n' +
-    'Age: ' + age + '\n' +
-    'Preferred Location: ' + loc + '\n' +
-    'Program Interest: ' + prog + '\n\n' +
-    'Message:\n' + msg + '\n\n' +
-    '---\nSent from moonrobotics.github.io'
-  );
-  window.location.href = 'mailto:moonbots862@gmail.com?subject=' + subject + '&body=' + body;
+  // Disable button to prevent double submit
+  var btn = document.querySelector('.form-sub');
+  btn.disabled = true;
+  btn.textContent = isCn ? '发送中…' : 'Sending…';
+
+  // Web3Forms API — key: 07430d2f-2ed1-48e1-abb5-afd8cdab82b8
+  var date   = (document.getElementById('f-date')   || {value:''}).value.trim();
+  var phone  = (document.getElementById('f-phone')  || {value:''}).value.trim();
+  var wechat = (document.getElementById('f-wechat') || {value:''}).value.trim();
+
+  var payload = {
+    access_key: '07430d2f-2ed1-48e1-abb5-afd8cdab82b8',
+    subject: 'Moon Robotics Enquiry — ' + name,
+    from_name: 'Moon Robotics Website',
+    replyto: email,
+    name: name,
+    email: email,
+    message:
+      'Student Name: ' + name + '\n' +
+      'Parent/Contact Email: ' + email + '\n' +
+      'Age: ' + age + '\n' +
+      'Preferred Location: ' + loc + '\n' +
+      'Program Interest: ' + prog + '\n' +
+      (date   ? 'Preferred Date: ' + date + '\n' : '') +
+      (phone  ? 'Phone: ' + phone + '\n' : '') +
+      (wechat ? 'WeChat ID: ' + wechat + '\n' : '') +
+      '\nMessage:\n' + msg + '\n\n' +
+      '---\nSent from moonrobotics.github.io'
+  };
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    if (data.success) {
+      // Success — show thank you message
+      var wrap = document.querySelector('.cf-wrap');
+      if (wrap) {
+        wrap.innerHTML =
+          '<div style="text-align:center;padding:2.5rem 1rem">' +
+          '<div style="font-size:3rem;margin-bottom:1rem">✅</div>' +
+          '<h3 style="color:var(--acc);margin-bottom:.6rem">' +
+            (isCn ? '咨询已发送！' : 'Enquiry Sent!') +
+          '</h3>' +
+          '<p style="color:var(--txt2);font-size:14px;margin-bottom:.4rem">' +
+            (isCn
+              ? '感谢您的咨询，我们会尽快联系您。'
+              : 'Thank you! We will get back to you soon.') +
+          '</p>' +
+          '<p style="color:var(--txt2);font-size:13px">' +
+            (isCn ? '确认邮件已发送至：' : 'Confirmation sent to: ') +
+            '<strong>' + email + '</strong>' +
+          '</p>' +
+          '</div>';
+      }
+    } else {
+      alert(isCn ? '发送失败，请稍后重试或直接发邮件至 moonbots862@gmail.com' : 'Submission failed. Please try again or email moonbots862@gmail.com directly.');
+      btn.disabled = false;
+      btn.textContent = isCn ? '发送咨询' : 'Send Enquiry';
+    }
+  })
+  .catch(function(){
+    alert(isCn ? '网络错误，请稍后重试或直接发邮件至 moonbots862@gmail.com' : 'Network error. Please try again or email moonbots862@gmail.com directly.');
+    btn.disabled = false;
+    btn.textContent = isCn ? '发送咨询' : 'Send Enquiry';
+  });
 }
 
-// ── NAV active highlight on scroll (home page only) ──
-var secs = document.querySelectorAll('#page-home section[id]');
-var obs = new IntersectionObserver(function(entries) {
-  if (curPage !== 'home') return; // V16: don't override sub-page highlights
-  entries.forEach(function(e) {
-    if (e.isIntersecting) {
-      document.querySelectorAll('#nav-links a, #mobile-nav a').forEach(function(a) {
-        var href = a.getAttribute('onclick') || '';
-        a.classList.toggle('active', href.indexOf("'" + e.target.id + "'") !== -1);
-      });
-    }
+// ── V31: NAV ACTIVE HIGHLIGHT — refined scroll detection ─────────────
+var NAV_MAP = {
+  'home':     "navHome",
+  'about':    "navScroll('about')",
+  'robots':   "navScroll('robots')",
+  'mentors':  "navScroll('mentors')",
+  'programs': "navScroll('programs')",
+  'locations':"navScroll('locations')",
+  'awards':   "navScroll('awards')",
+  'contact':  "navScroll('contact')"
+};
+var SUBPAGE_MAP = {
+  'kiwibots': "showPage('kiwibots')",
+  'vex':      "showPage('vex')"
+};
+
+function setNavActive(onclickStr) {
+  document.querySelectorAll('#nav-links a, #mobile-nav a').forEach(function(a) {
+    var fn = a.getAttribute('onclick') || '';
+    a.classList.toggle('active', fn.indexOf(onclickStr) !== -1);
   });
-}, { threshold: 0.35 });
-secs.forEach(function(s){ obs.observe(s); });
+}
+
+// Use scroll event for precise highlight — find which section's top is closest to nav bottom
+var allSections = Array.from(document.querySelectorAll('#page-home section[id]'));
+var NAV_HEIGHT = 62;
+
+function updateNavOnScroll() {
+  if (curPage !== 'home') return;
+  var scrollY = window.scrollY || window.pageYOffset;
+  var viewTop = scrollY + NAV_HEIGHT + 10; // small offset for comfort
+
+  // Find the last section whose top is above current viewTop
+  var active = null;
+  for (var i = 0; i < allSections.length; i++) {
+    var sec = allSections[i];
+    var top = sec.getBoundingClientRect().top + scrollY;
+    if (top <= viewTop) {
+      active = sec;
+    }
+  }
+
+  if (active && NAV_MAP[active.id]) {
+    setNavActive(NAV_MAP[active.id]);
+  } else if (scrollY < 50) {
+    // At very top — no section highlighted
+    document.querySelectorAll('#nav-links a, #mobile-nav a').forEach(function(a){ a.classList.remove('active'); });
+  }
+}
+
+window.addEventListener('scroll', updateNavOnScroll, { passive: true });
+// Initial call
+updateNavOnScroll();
+
+// Override navScroll to immediately highlight on click
+var _origNavScroll = navScroll;
+navScroll = function(id) {
+  _origNavScroll(id);
+  if (NAV_MAP[id]) setNavActive(NAV_MAP[id]);
+};
+// ── END V31 NAV HIGHLIGHT ─────────────────────────────────────────────
 
 // ── V24: WORKSHOPS LOADER ─────────────────────────────────────────────
 // Reads workshops.json — to update workshops, ONLY edit workshops.json
