@@ -421,14 +421,11 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 .quote-attr{font-size:13px;color:var(--acc);font-weight:700}
 
 /* ── CONTACT (V9) ── */
-.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+/* V35: 2-col layout where right col (form) aligns with top of section */
+.ct-outer{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.ct-grid{display:flex;flex-direction:column}
 .ct-grid>.ct-left{display:flex;flex-direction:column}
-/* V34: form col starts at same vertical position as h2 heading */
-.ct-grid>.cf-wrap-col{
-  display:flex;flex-direction:column;justify-content:flex-start;
-  position:sticky;top:70px;           /* sticks near top as user scrolls */
-  align-self:start;
-}
+.ct-grid>.cf-wrap-col{display:flex;flex-direction:column;justify-content:flex-start}
 .ct-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.8rem;font-size:14px;color:var(--txt2);line-height:1.6}
 .ct-ico{width:30px;height:30px;border-radius:7px;background:rgba(0,98,204,.09);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
 .soc-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
@@ -471,7 +468,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 .sp-logos img{height:56px;width:auto;object-fit:contain;opacity:.85;transition:opacity .2s}
 .sp-logos img:hover{opacity:1}
 
-/* ── FOOTER (V24: compact, text centred each line, no blank gaps) ── */
+/* ── FOOTER (V35) ── */
 #footer{
   background:rgba(0,50,120,.04);border-top:1px solid var(--border);
   padding:.5rem 1.5rem .4rem;text-align:center;
@@ -480,8 +477,10 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
   display:flex;justify-content:space-between;align-items:center;
   max-width:100%;margin:0 auto 0;padding:0;flex-wrap:nowrap;gap:.5rem;
 }
-.ft-ml{height:80px;width:60px;object-fit:contain;margin-left:0}
-.ft-ct{height:80px;width:60px;object-fit:contain;margin-right:0}
+/* V35: logos grouped together on desktop left side */
+.ft-logos-icons{display:flex;align-items:center;gap:1.5rem;flex-shrink:0}
+.ft-ml{height:80px;width:60px;object-fit:contain}
+.ft-ct{height:80px;width:60px;object-fit:contain}
 .ft-mid{flex:1;text-align:center;padding:0 .5rem;display:flex;flex-direction:column;justify-content:center;gap:0}
 .ft-mid .ftname{font-size:13px;font-weight:800;color:var(--txt);line-height:1.4}
 .ft-mid .ftsub{font-size:11.5px;color:var(--txt2);line-height:1.4}
@@ -550,7 +549,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
   .g2,.g3,.g4{grid-template-columns:1fr 1fr}
   .stats-bar{flex-wrap:wrap}
   .stat-i{min-width:50%;border-bottom:1px solid var(--border)}
-  .ct-grid{grid-template-columns:1fr}
+  .ct-outer{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   /* V33 mobile: Featured — left col above right col */
@@ -594,37 +593,24 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     width:100%;
   }
 
-  /* V34 mobile: Footer — logos row on top, text below */
+  /* V35 mobile: Footer — logos centred side-by-side on top, text below */
+  #footer{padding:.8rem 1rem .6rem}
   #footer .ft-logos{
+    display:flex;
     flex-direction:column;
     align-items:center;
-    gap:.6rem;
+    gap:.4rem;
   }
-  #footer .ft-logos .ft-ml,
-  #footer .ft-logos .ft-ct{
-    order:-1;           /* logos float to top in column layout */
-    margin:0;
-  }
-  #footer .ft-logos .ft-ml{ order:-2; } /* Moonbots first */
-  #footer .ft-logos .ft-ct{ order:-1; } /* Caltech second */
-  #footer .ft-mid{
-    order:0;            /* text content last */
-    text-align:center;
-    width:100%;
-  }
-  /* Side-by-side logos on mobile */
-  #footer .ft-logos{
-    display:grid;
-    grid-template-areas:
-      "logo-l logo-r"
-      "mid    mid";
-    grid-template-columns:auto auto;
+  .ft-logos-icons{
+    display:flex;
     justify-content:center;
-    column-gap:2rem;
+    align-items:center;
+    gap:2.5rem;
+    width:100%;
+    margin-bottom:.4rem;
   }
-  .ft-ml{ grid-area:logo-l }
-  .ft-ct{ grid-area:logo-r }
-  .ft-mid{ grid-area:mid; width:100% }
+  .ft-ml,.ft-ct{margin:0}
+  .ft-mid{text-align:center;width:100%;padding:0}
 }
 </style>
 </head>
@@ -720,7 +706,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
   <h2 class="sttl" data-en="Robots &amp; Competitions" data-cn="机器人与比赛">Robots &amp; Competitions</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:stretch">
 
-    <!-- LEFT column: IQ card (image left, text right) + full-width MixandMatch -->
+    <!-- LEFT column: IQ card + Level-Up card — fills same height as right referee photo -->
     <div style="display:flex;flex-direction:column;gap:1.25rem">
 
       <!-- IQ card: logo+text LEFT, clawbot image RIGHT — V31 -->
@@ -746,12 +732,14 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 
       </div>
 
-      <!-- Bottom: Level Up Field — V33: full-width cover -->
-      <div class="rob-card" style="flex:1">
-        <div style="background:#f0f7ff;border-bottom:1px solid var(--border);overflow:hidden;height:220px">
+      <!-- Bottom: Level Up Field — V35: 50px padding top/bottom, full image visible -->
+      <div class="rob-card" style="flex:1;display:flex;flex-direction:column">
+        <div style="background:#f0f7ff;border-bottom:1px solid var(--border);
+                    display:flex;align-items:center;justify-content:center;
+                    padding:50px .75rem;flex:1">
           <img src="Level-Up-Field-Element.jpg"
                alt="VEX IQ Level Up 2026-2027 game field element — Moon Robotics Auckland competition training"
-               style="width:100%;height:100%;object-fit:cover;object-position:center"
+               style="max-width:100%;max-height:100%;object-fit:contain"
                onerror="this.parentElement.style.background='#e8f4ff'">
         </div>
         <div class="rob-body">
@@ -764,8 +752,8 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     </div><!-- /LEFT column -->
 
     <!-- RIGHT column: Referee photo full height + caption -->
-    <div style="display:flex;flex-direction:column;gap:.6rem">
-      <div class="img-f" style="min-height:460px;max-height:620px;overflow:hidden;border-radius:var(--rl);flex:1">
+    <div style="display:flex;flex-direction:column;gap:.6rem;align-self:stretch">
+      <div class="img-f" style="flex:1;overflow:hidden;border-radius:var(--rl)">
         <img src="vex-iq-national-championship-referee-auckland-2023.png"
              alt="VEX IQ New Zealand National Championship 2023 — Jason Huang Head Referee Auckland competition"
              style="width:100%;height:100%;min-height:460px;object-fit:cover;object-position:center bottom"
@@ -1124,15 +1112,16 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 </section>
 <div class="divider"></div>
 
-<!-- GET IN TOUCH (V9) -->
+<!-- GET IN TOUCH (V35: form aligned to top of section) -->
 <section class="sec" id="contact">
 <div class="si">
-  <div class="stag" data-en="Get In Touch" data-cn="联系我们">Get In Touch</div>
-  <h2 class="sttl" data-en="Join Moon Robotics" data-cn="加入Moon Robotics">Join Moon Robotics</h2>
-  <div class="ct-grid">
-    <!-- Left: contact info, follow us, sponsors -->
-    <div class="ct-left">
-      <h3 style="font-size:15px;font-weight:800;margin-bottom:1rem" data-en="Contact Us" data-cn="联系方式">Contact Us</h3>
+  <div class="ct-outer">
+    <!-- LEFT: stag + heading + contact info + follow + sponsors -->
+    <div class="ct-grid">
+      <div class="ct-left">
+        <div class="stag" data-en="Get In Touch" data-cn="联系我们">Get In Touch</div>
+        <h2 class="sttl" data-en="Join Moon Robotics" data-cn="加入Moon Robotics">Join Moon Robotics</h2>
+        <h3 style="font-size:15px;font-weight:800;margin-bottom:1rem" data-en="Contact Us" data-cn="联系方式">Contact Us</h3>
       <div class="ct-item"><div class="ct-ico">📍</div><div data-en="Auckland NZ — Central · North Shore · East · West · South" data-cn="新西兰奥克兰 — 中区·北岸·东区·西区·南区">Auckland NZ — Central · North Shore · East · West · South</div></div>
       <div class="ct-item"><div class="ct-ico">🌐</div><div><a href="https://moonrobotics.github.io/" style="color:var(--acc)">moonrobotics.github.io</a></div></div>
 
@@ -1214,10 +1203,11 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
       </div>
 
     </div><!-- end left col -->
+    </div><!-- /ct-grid left -->
 
-    <!-- Right: Book a lesson form -->
+    <!-- Right: Book a lesson form — aligned to top of section -->
     <div class="cf-wrap-col">
-    <div class="cf-wrap" style="margin-top:0">
+    <div class="cf-wrap">
       <h3 data-en="Book a Free Trial Lesson or any Inquiry" data-cn="预约免费试课或任何咨询">Book a Free Trial Lesson or any Inquiry</h3>
       <div class="fg">
         <label data-en="STUDENT NAME *" data-cn="学生姓名 *">STUDENT NAME *</label>
@@ -1279,16 +1269,21 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 
     </div><!-- /cf-wrap -->
     </div><!-- /cf-wrap-col -->
-  </div><!-- /ct-grid -->
+  </div><!-- /ct-outer -->
 </div>
 </section>
 
-<!-- FOOTER (V33: updated logo sizes + link text) -->
+<!-- FOOTER (V35: logos wrapped for mobile centring) -->
 <footer id="footer">
   <div class="ft-logos">
-    <img class="ft-ml" src="moon-robotics-moonbots-862-logo.png"
-         alt="Moon Robotics MoonBots VEX 862 Auckland robotics club logo"
-         onerror="this.style.display='none'">
+    <div class="ft-logos-icons">
+      <img class="ft-ml" src="moon-robotics-moonbots-862-logo.png"
+           alt="Moon Robotics MoonBots VEX 862 Auckland robotics club logo"
+           onerror="this.style.display='none'">
+      <img class="ft-ct" src="caltech-california-institute-technology-logo.png"
+           alt="Caltech California Institute of Technology logo — partner of Moon Robotics Auckland"
+           onerror="this.style.display='none'">
+    </div>
     <div class="ft-mid">
       <div class="ftname">Moon Robotics · MoonBots VEX 862</div>
       <div class="ftsub">Auckland, New Zealand</div>
@@ -1296,9 +1291,6 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
       <p class="ft-tags"><span>#VEXRobotics</span> <span>#STEMEducation</span> <span>#FutureEngineers</span> <span>#AucklandRobotics</span></p>
       <p>© 2024–2026 Moon Robotics (MoonBots 862). All rights reserved. · Auckland, New Zealand</p>
     </div>
-    <img class="ft-ct" src="caltech-california-institute-technology-logo.png"
-         alt="Caltech California Institute of Technology logo — partner of Moon Robotics Auckland"
-         onerror="this.style.display='none'">
   </div>
 </footer>
 
