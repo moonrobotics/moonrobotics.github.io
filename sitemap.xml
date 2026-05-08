@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home Page (main entry) -->
+  <url>
+    <loc>https://moonrobotics.github.io/</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://moonrobotics.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://moonrobotics.github.io/"/>
+  </url>
+
+  <!-- Kiwibots section -->
+  <url>
+    <loc>https://moonrobotics.github.io/#kiwibots</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- VEX section -->
+  <url>
+    <loc>https://moonrobotics.github.io/#vex</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About Us / Our Story section -->
+  <url>
+    <loc>https://moonrobotics.github.io/#about</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Our Mentors section -->
+  <url>
+    <loc>https://moonrobotics.github.io/#mentors</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Programs section -->
+  <url>
+    <loc>https://moonrobotics.github.io/#programs</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Auckland Locations section -->
+  <url>
+    <loc>https://moonrobotics.github.io/#locations</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Awards & Achievements section -->
+  <url>
+    <loc>https://moonrobotics.github.io/#awards</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact / Book a Free Trial section -->
+  <url>
+    <loc>https://moonrobotics.github.io/#contact</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

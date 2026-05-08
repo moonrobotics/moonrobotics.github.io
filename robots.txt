@@ -1,0 +1,32 @@
+# robots.txt for Moon Robotics Club Auckland
+# https://moonrobotics.github.io/
+# VEX 862 | Auckland Robotics Club | STEM Education NZ
+
+# ─────────────────────────────────────────
+# Allow all major search engines
+# ─────────────────────────────────────────
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Allow all other crawlers
+User-agent: *
+Allow: /
+
+# ─────────────────────────────────────────
+# Sitemap location
+# ─────────────────────────────────────────
+
+Sitemap: https://moonrobotics.github.io/sitemap.xml
