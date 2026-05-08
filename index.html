@@ -5,12 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ═══ V13 SEO Meta (from V12) ═══ -->
-<title>Moon Robotics Club | VEX IQ &amp; 862 Team Training | Auckland NZ</title>
-<meta name="description" content="Moon Robotics Club (MoonBots VEX 862) — Auckland's premier VEX IQ &amp; V5 robotics training. Free workshops, 5/10-session courses &amp; competition teams for ages 6–15. 5 Auckland locations. Founded by a VEX World Champion. 奥克兰最优秀的VEX机器人培训俱乐部，面向6–15岁青少年，设有5个培训点，由VEX世界冠军创立。">
+<title>Moon Robotics Club - STEM Education | VEX Robotics | STEM教育 | 中小学机器人教育 | 机器人编程 | VEX IQ | Auckland NZ</title>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+<meta name="description" content="Moon Robotics Club (MoonBots VEX 862) — Auckland's premier STEM education &amp; VEX robotics training. Free workshops, 10-session courses &amp; competition teams for ages 6–15. 5 Auckland locations. Founded by a VEX World Champion. 奥克兰领先的STEM教育与VEX机器人培训俱乐部，面向6–15岁青少年，提供专业竞赛指导，由VEX世界冠军创立。">
 <meta name="keywords" content="
   Moon Robotics, Moon Robotics Club Auckland, MoonBots 862, VEX 862,
   VEX IQ Auckland, VEX IQ Robotics Competition, VEX V5 Auckland,
   VEX Robotics New Zealand, VEX Robotics Club NZ,
+  STEM Education Auckland, STEM Education New Zealand, STEM education for kids,
+  STEM Education NZ, STEM learning Auckland, STEM after school Auckland,
   Auckland Robotics Training, Robotics for kids Auckland,
   Robotics classes North Shore, Robotics club Albany Silverdale,
   Robotics club East Auckland, Robotics club West Auckland,
@@ -23,6 +26,8 @@
   Free robotics workshop Auckland, robotics after school Auckland,
   奥克兰机器人培训, 奥克兰机器人俱乐部, 新西兰VEX培训,
   VEX机器人俱乐部, VEX IQ培训, 新西兰STEM教育,
+  STEM教育, STEM教育奥克兰, 中小学机器人教育, 机器人编程,
+  机器人编程培训, 青少年STEM教育新西兰, STEM课程奥克兰,
   奥克兰青少年机器人, 机器人兴趣班奥克兰,
   北岸机器人培训, 东区机器人培训, 西区机器人培训,
   奥克兰免费机器人公开课, VEX新西兰年度义工奖,
@@ -468,25 +473,29 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 .sp-logos img{height:56px;width:auto;object-fit:contain;opacity:.85;transition:opacity .2s}
 .sp-logos img:hover{opacity:1}
 
-/* ── FOOTER (V35) ── */
+/* ── FOOTER (V36) ── */
 #footer{
   background:rgba(0,50,120,.04);border-top:1px solid var(--border);
   padding:.5rem 1.5rem .4rem;text-align:center;
 }
+/* Desktop: MoonBots LEFT | text CENTRE | Caltech RIGHT */
 .ft-logos{
   display:flex;justify-content:space-between;align-items:center;
-  max-width:100%;margin:0 auto 0;padding:0;flex-wrap:nowrap;gap:.5rem;
+  max-width:100%;margin:0 auto;padding:0;flex-wrap:nowrap;gap:.5rem;
 }
-/* V35: logos grouped together on desktop left side */
-.ft-logos-icons{display:flex;align-items:center;gap:1.5rem;flex-shrink:0}
+.ft-logo-left{display:flex;align-items:center;flex-shrink:0}
+.ft-logo-right{display:flex;align-items:center;flex-shrink:0}
 .ft-ml{height:80px;width:60px;object-fit:contain}
 .ft-ct{height:80px;width:60px;object-fit:contain}
-.ft-mid{flex:1;text-align:center;padding:0 .5rem;display:flex;flex-direction:column;justify-content:center;gap:0}
+.ft-mid{flex:1;text-align:center;padding:0 1rem;display:flex;flex-direction:column;justify-content:center;gap:0}
 .ft-mid .ftname{font-size:13px;font-weight:800;color:var(--txt);line-height:1.4}
 .ft-mid .ftsub{font-size:11.5px;color:var(--txt2);line-height:1.4}
 #footer p{font-size:11.5px;color:var(--txt2);margin:0;line-height:1.6}
 #footer a{color:var(--acc)}
 .ft-tags{font-size:10.5px;color:var(--txt2);opacity:.6;line-height:1.6}
+
+/* Desktop: hide mobile-only logos row */
+.ft-logos-mobile-row{display:none}
 
 /* ── KIWIBOTS / VEX PAGE ── */
 .back-btn{
@@ -593,7 +602,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     width:100%;
   }
 
-  /* V35 mobile: Footer — logos centred side-by-side on top, text below */
+  /* V36 mobile: Footer — both logos centred side-by-side on top, text below */
   #footer{padding:.8rem 1rem .6rem}
   #footer .ft-logos{
     display:flex;
@@ -601,7 +610,8 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     align-items:center;
     gap:.4rem;
   }
-  .ft-logos-icons{
+  /* Mobile: show logos row centred at top */
+  .ft-logos-mobile-row{
     display:flex;
     justify-content:center;
     align-items:center;
@@ -609,7 +619,8 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     width:100%;
     margin-bottom:.4rem;
   }
-  .ft-ml,.ft-ct{margin:0}
+  /* Hide individual left/right wrappers on mobile */
+  .ft-logo-left,.ft-logo-right{display:none}
   .ft-mid{text-align:center;width:100%;padding:0}
 }
 </style>
@@ -706,8 +717,8 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
   <h2 class="sttl" data-en="Robots &amp; Competitions" data-cn="机器人与比赛">Robots &amp; Competitions</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;align-items:stretch">
 
-    <!-- LEFT column: IQ card + Level-Up card — fills same height as right referee photo -->
-    <div style="display:flex;flex-direction:column;gap:1.25rem">
+    <!-- LEFT column: IQ card + Level-Up card — height matches right referee photo -->
+    <div style="display:flex;flex-direction:column;gap:1.25rem;height:100%">
 
       <!-- IQ card: logo+text LEFT, clawbot image RIGHT — V31 -->
       <div class="rob-card" style="flex-direction:row;align-items:stretch">
@@ -719,7 +730,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
                style="max-height:36px;max-width:100%;object-fit:contain;margin-bottom:.6rem;align-self:flex-start"
                onerror="this.style.display='none'">
           <div class="rob-ttl" style="margin-bottom:.4rem" data-en="Ages 6–15" data-cn="适合6–15岁">Ages 6–15</div>
-          <div class="rob-desc" data-en="Plastic snap-together kits. Teamwork, programming &amp; design." data-cn="积木拼插套件。团队合作、编程与设计。">Plastic snap-together kits.<br>Teamwork, programming &amp; design.</div>
+          <div class="rob-desc" data-en="Plastic snap-together kits. Teamwork, programming &amp; design." data-cn="积木拼插套件。团队合作、编程与设计。">Plastic snap-together kits. Teamwork, programming &amp; design.</div>
         </div>
 
         <!-- Right: clawbot image, top-aligned -->
@@ -732,11 +743,11 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 
       </div>
 
-      <!-- Bottom: Level Up Field — V35: 50px padding top/bottom, full image visible -->
-      <div class="rob-card" style="flex:1;display:flex;flex-direction:column">
+      <!-- Bottom: Level Up Field — V36: 40px padding top/bottom, aligned bottom with referee photo -->
+      <div class="rob-card" style="flex:1;display:flex;flex-direction:column;min-height:0">
         <div style="background:#f0f7ff;border-bottom:1px solid var(--border);
                     display:flex;align-items:center;justify-content:center;
-                    padding:50px .75rem;flex:1">
+                    padding:40px .75rem;flex:1">
           <img src="Level-Up-Field-Element.jpg"
                alt="VEX IQ Level Up 2026-2027 game field element — Moon Robotics Auckland competition training"
                style="max-width:100%;max-height:100%;object-fit:contain"
@@ -1273,10 +1284,17 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 </div>
 </section>
 
-<!-- FOOTER (V35: logos wrapped for mobile centring) -->
+<!-- FOOTER (V36: desktop MoonBots LEFT | text CENTRE | Caltech RIGHT; mobile both logos centred on top) -->
 <footer id="footer">
   <div class="ft-logos">
-    <div class="ft-logos-icons">
+    <!-- Desktop LEFT: MoonBots logo -->
+    <div class="ft-logo-left">
+      <img class="ft-ml" src="moon-robotics-moonbots-862-logo.png"
+           alt="Moon Robotics MoonBots VEX 862 Auckland robotics club logo"
+           onerror="this.style.display='none'">
+    </div>
+    <!-- Mobile ONLY: both logos centred in a row -->
+    <div class="ft-logos-mobile-row">
       <img class="ft-ml" src="moon-robotics-moonbots-862-logo.png"
            alt="Moon Robotics MoonBots VEX 862 Auckland robotics club logo"
            onerror="this.style.display='none'">
@@ -1284,12 +1302,19 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
            alt="Caltech California Institute of Technology logo — partner of Moon Robotics Auckland"
            onerror="this.style.display='none'">
     </div>
+    <!-- Centre: text -->
     <div class="ft-mid">
       <div class="ftname">Moon Robotics · MoonBots VEX 862</div>
       <div class="ftsub">Auckland, New Zealand</div>
       <p><a href="https://moonrobotics.github.io/" rel="noopener">Moon Robotics</a> · <a href="https://www.kiwibots.co.nz/" target="_blank" rel="noopener">Kiwibots</a> · <a href="https://www.vexrobotics.com" target="_blank" rel="noopener">VEX Robotics</a></p>
       <p class="ft-tags"><span>#VEXRobotics</span> <span>#STEMEducation</span> <span>#FutureEngineers</span> <span>#AucklandRobotics</span></p>
       <p>© 2024–2026 Moon Robotics (MoonBots 862). All rights reserved. · Auckland, New Zealand</p>
+    </div>
+    <!-- Desktop RIGHT: Caltech logo -->
+    <div class="ft-logo-right">
+      <img class="ft-ct" src="caltech-california-institute-technology-logo.png"
+           alt="Caltech California Institute of Technology logo — partner of Moon Robotics Auckland"
+           onerror="this.style.display='none'">
     </div>
   </div>
 </footer>
