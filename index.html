@@ -1285,6 +1285,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
         <h2 class="sttl" data-en="Join Moon Robotics" data-cn="加入Moon Robotics">Join Moon Robotics</h2>
         <h3 style="font-size:15px;font-weight:800;margin-bottom:1rem" data-en="Contact Us" data-cn="联系方式">Contact Us</h3>
       <div class="ct-item"><div class="ct-ico">📍</div><div data-en="Auckland NZ — Central · North Shore · East · West · South" data-cn="新西兰奥克兰 — 中区·北岸·东区·西区·南区">Auckland NZ — Central · North Shore · East · West · South</div></div>
+      <div class="ct-item"><div class="ct-ico">✉️</div><div><a href="mailto:moonbots862@gmail.com" style="color:var(--acc)">moonbots862@gmail.com</a></div></div>
       <div class="ct-item"><div class="ct-ico">🌐</div><div><a href="https://moonrobotics.github.io/" style="color:var(--acc)">moonrobotics.github.io</a></div></div>
 
       <h3 style="font-size:13px;font-weight:800;margin-top:1.5rem;margin-bottom:.6rem;color:var(--txt2)"
@@ -2017,11 +2018,21 @@ function renderWorkshops(workshops) {
   var today = new Date();
   today.setHours(0,0,0,0);
 
-  // Filter future events only, sort ascending, take max 3
-  var upcoming = workshops
+  // Filter future events only, sort ascending
+  // Deduplicate: keep only the earliest upcoming event per venue (location_en)
+  var sorted = workshops
     .filter(function(w){ return new Date(w.date) >= today; })
-    .sort(function(a,b){ return new Date(a.date) - new Date(b.date); })
-    .slice(0, 3);
+    .sort(function(a,b){ return new Date(a.date) - new Date(b.date); });
+
+  var seenLocations = {};
+  var upcoming = [];
+  for (var i = 0; i < sorted.length && upcoming.length < 3; i++) {
+    var key = (sorted[i].location_en || '').trim().toLowerCase();
+    if (!seenLocations[key]) {
+      seenLocations[key] = true;
+      upcoming.push(sorted[i]);
+    }
+  }
 
   if (upcoming.length === 0) {
     list.innerHTML = '<p class="ws-none">' +
