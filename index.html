@@ -89,7 +89,8 @@
 }
 </script>
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="shortcut icon" href="favicon.svg">
 
 <!-- V16: Plus Jakarta Sans + Noto Sans SC -->
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -999,10 +1000,10 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
       <span class="pbadge pb3" style="cursor:pointer" onclick="navScroll('contact')" data-en="Apply" data-cn="申请加入">Apply</span>
     </div>
     <div class="pcard">
-      <div class="pico">🌏</div>
-      <div class="ptitle" data-en="Club Incubation" data-cn="俱乐部孵化">Club Incubation</div>
-      <div class="pdesc" data-en="Help build local VEX clubs across New Zealand — reach us if you want to start one." data-cn="协助在新西兰各地创建当地VEX俱乐部——欢迎联系我们。">Help build local VEX clubs across New Zealand — reach us if you want to start one.</div>
-      <span class="pbadge pb4" style="cursor:pointer" onclick="navScroll('contact')" data-en="Enquire" data-cn="咨询">Enquire</span>
+      <div class="pico">🌟</div>
+      <div class="ptitle" data-en="Holiday Program" data-cn="假期课程">Holiday Program</div>
+      <div class="pdesc" data-en="Intensive robotics camps during school holidays — build, program and compete in a fun hands-on environment. Open to all skill levels, ages 6–15." data-cn="学校假期期间的机器人集训营——在趣味动手环境中搭建、编程和竞赛。对所有水平开放，适合6–15岁。">Intensive robotics camps during school holidays — build, program and compete in a fun hands-on environment. Open to all skill levels, ages 6–15.</div>
+      <span class="pbadge pb4" style="cursor:pointer" onclick="navScroll('contact')" data-en="Enquire" data-cn="咨询了解">Enquire</span>
     </div>
   </div>
 
@@ -1014,10 +1015,12 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
         <div style="font-size:1.8rem;margin-bottom:.5rem">📅</div>
         <h3 style="margin-bottom:.5rem" data-en="Upcoming Free Workshops" data-cn="即将举行的免费公开课">Upcoming Free Workshops</h3>
         <p style="font-size:13px;color:var(--txt2);margin-bottom:.8rem"
-           data-en="Library &amp; school workshops are FREE · Ages 6–15 · No experience needed"
-           data-cn="图书馆与学校公开课免费 · 6–15岁 · 无需基础">Library &amp; school workshops are FREE · Ages 6–15 · No experience needed</p>
-        <button class="btn-pri" onclick="navScroll('contact')"
-                data-en="Register Now — It's Free" data-cn="立即免费报名">Register Now — It's Free</button>
+           data-en="Library &amp; school workshops are FREE · Ages 6–15 · No experience needed. While this event is entirely free, spaces are limited to ensure a high-quality experience for every child."
+           data-cn="图书馆与学校公开课完全免费 · 6–15岁 · 无需基础。活动完全免费，但名额有限，以确保每位孩子获得优质体验。">Library &amp; school workshops are FREE · Ages 6–15 · No experience needed. While this event is entirely free, spaces are limited to ensure a high-quality experience for every child.</p>
+        <a href="https://www.eventfinda.co.nz/user/moonbots862" target="_blank" rel="noopener">
+          <button class="btn-pri"
+                  data-en="Register Now — It's Free" data-cn="立即免费报名">Register Now — It's Free</button>
+        </a>
       </div>
       <!-- Right: dynamic workshop list -->
       <div id="workshop-list">
@@ -1028,6 +1031,11 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
           </div>
         </div>
       </div>
+      <p style="font-size:11.5px;color:var(--txt2);margin-top:.6rem">
+        📣 <span data-en="Events also listed on" data-cn="活动同步发布于">Events also listed on</span>
+        <a href="https://www.eventfinda.co.nz/user/moonbots862" target="_blank" rel="noopener"
+           style="color:var(--acc);font-weight:700">Eventfinda ↗</a>
+      </p>
     </div>
   </div>
 
@@ -1150,14 +1158,14 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 
     <!-- NZ Club Incubation -->
     <div class="card" style="display:flex;flex-direction:column;gap:1rem">
-      <div style="font-size:2.2rem">🌏</div>
+      <div style="font-size:2.2rem">🗺️</div>
       <div>
         <div style="font-size:15px;font-weight:800;color:var(--txt);margin-bottom:.4rem"
              data-en="New Zealand Club Incubation"
              data-cn="新西兰俱乐部孵化">New Zealand Club Incubation</div>
         <p style="font-size:13.5px;color:var(--txt2);line-height:1.7;margin-bottom:1rem"
-           data-en="We help build local VEX robotics clubs across New Zealand — reach us if you want to start one in your region."
-           data-cn="我们协助在新西兰各地建立本地VEX机器人俱乐部——如果您希望在当地发起，欢迎联系我们。">We help build local VEX robotics clubs across New Zealand — reach us if you want to start one in your region.</p>
+           data-en="We help build local VEX robotics clubs across New Zealand (NZ) — reach us if you want to start one in your region."
+           data-cn="我们协助在新西兰（NZ）各地建立本地VEX机器人俱乐部——如果您希望在当地发起，欢迎联系我们。">We help build local VEX robotics clubs across New Zealand (NZ) — reach us if you want to start one in your region.</p>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:6px">
           <li style="font-size:13px;color:var(--txt2);display:flex;align-items:center;gap:8px">
             <span style="color:#7b3fc7;font-weight:700">✔</span>
@@ -1408,7 +1416,8 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
           <option data-en="Training Program: 5/10 Sessions" data-cn="培训课程：5/10节">Training Program: 5/10 Sessions</option>
           <option data-en="Competition Team" data-cn="参赛组队">Competition Team</option>
           <option data-en="School / Library / Community Partnership" data-cn="学校/图书馆/社区合作">School / Library / Community Partnership</option>
-          <option data-en="Club Incubation" data-cn="俱乐部孵化">Club Incubation</option>
+          <option data-en="Holiday Program" data-cn="假期课程">Holiday Program</option>
+          <option data-en="Club Incubation (Start a Club in NZ)" data-cn="俱乐部孵化（在新西兰创建俱乐部）">Club Incubation (Start a Club in NZ)</option>
         </select>
       </div>
       <!-- V31: optional fields — Date, Phone, WeChat -->
