@@ -36,14 +36,26 @@
       "note_en": "FREE · No experience needed",
       "note_cn": "免费 · 无需基础"
     },
+            {
+      "date": "2026-07-06",
+      "time_en": "10:30am – 12:00pm",
+      "time_cn": "上午10时30分至12时",
+      "location_en": "Waitakere Library",
+      "location_cn": "Waitakere图书馆",
+      "area_en": "West Auckland",
+      "area_cn": "奥克兰西区",
+      "ages": "6–15",
+      "note_en": "FREE · No experience needed",
+      "note_cn": "免费 · 无需基础"
+    },
     {
       "date": "2026-07-13",
       "time_en": "10:30am – 12:00pm",
       "time_cn": "上午10时30分至12时",
       "location_en": "Papakura Library",
       "location_cn": "Papakura图书馆",
-      "area_en": "Manukau",
-      "area_cn": "南区",
+      "area_en": "South Auckland",
+      "area_cn": "奥克兰南区",
       "ages": "6–15",
       "note_en": "FREE · No experience needed",
       "note_cn": "免费 · 无需基础"
@@ -55,7 +67,7 @@
       "location_en": "Highland Park Library",
       "location_cn": "Highland Park图书馆",
       "area_en": "East Auckland",
-      "area_cn": "东区",
+      "area_cn": "奥克兰东区",
       "ages": "6–15",
       "note_en": "FREE · No experience needed",
       "note_cn": "免费 · 无需基础"
@@ -67,7 +79,7 @@
       "location_en": "Highland Park Library",
       "location_cn": "Highland Park图书馆",
       "area_en": "East Auckland",
-      "area_cn": "东区",
+      "area_cn": "奥克兰东区",
       "ages": "6–15",
       "note_en": "FREE · No experience needed",
       "note_cn": "免费 · 无需基础"
@@ -79,7 +91,7 @@
       "location_en": "Highland Park Library",
       "location_cn": "Albany图书馆",
       "area_en": "North Shore",
-      "area_cn": "北岸",
+      "area_cn": "奥克兰北岸",
       "ages": "6–15",
       "note_en": "FREE · No experience needed",
       "note_cn": "免费 · 无需基础"
@@ -91,7 +103,7 @@
       "location_en": "Henderson Library",
       "location_cn": "Henderson图书馆",
       "area_en": "West Auckland",
-      "area_cn": "西区",
+      "area_cn": "奥克兰西区",
       "ages": "6–15",
       "note_en": "FREE · No experience needed",
       "note_cn": "免费 · 无需基础"
