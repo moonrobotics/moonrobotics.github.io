@@ -74,6 +74,7 @@
     "South Auckland"
   ],
   "foundingDate": "2024",
+  "dateModified": "2026-06-17",
   "founder": [
     {"@type": "Person", "name": "Jason Huang"},
     {"@type": "Person", "name": "Evan Huang"}
@@ -89,7 +90,71 @@
 }
 </script>
 
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<!-- V48: FAQPage schema for GEO / AI search engines (ChatGPT, Gemini, Perplexity, Claude) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Moon Robotics Club?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moon Robotics (MoonBots VEX 862) is a VEX Robotics club based in Auckland, New Zealand, founded in 2024 by father-son duo Jason Huang and Evan Huang. It provides STEM and robotics education for students aged 6 to 15 across 5 Auckland training centers: Central Auckland, North Shore, East Auckland, West Auckland, and South Auckland."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Moon Robotics offer free robotics workshops in Auckland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Moon Robotics runs free robotics workshops at Auckland libraries and schools for children aged 6 to 15 with no experience needed. Workshops are limited in space and are listed on the Moon Robotics website and on Eventfinda (eventfinda.co.nz/user/moonbots862)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who founded Moon Robotics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moon Robotics was co-founded in 2024 by Jason Huang, Head Coach and VEX Auckland Head Referee (VEX NZ Volunteer of the Year 2025-26), and his son Evan Huang, Senior Mentor and VEX V5 Engineering Challenge World Champion 2022, who is now a student at the California Institute of Technology (Caltech)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between VEX IQ and VEX V5?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VEX IQ is designed for ages 6-15 and uses plastic snap-together kits, focusing on teamwork, programming and design. VEX V5 is designed for ages 14-18 and uses metal parts with advanced programming and a full engineering notebook. Moon Robotics in Auckland coaches both VEX IQ and VEX V5 teams."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What age range does Moon Robotics teach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moon Robotics primarily serves students aged 6 to 15 through VEX IQ workshops, training programs, and competition teams. VEX V5 (ages 14-18) is also coached for students progressing to advanced robotics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are Moon Robotics training locations in Auckland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moon Robotics operates 5 training centers across Auckland, New Zealand: Central Auckland (New Lynn, Avondale), North Shore (Albany, Silverdale), East Auckland (Howick, Botany), West Auckland (Henderson, Massey), and South Auckland (Manukau, Papakura)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I contact Moon Robotics or book a free trial lesson?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parents can book a free trial lesson or make an enquiry via the contact form at moonrobotics.github.io, by emailing moonbots862@gmail.com, or via the Moon Robotics Linktree at linktr.ee/MoonBots which lists Facebook, LinkedIn, WhatsApp, WeChat and Xiaohongshu (RedNote) channels."
+      }
+    }
+  ]
+}
+</script>
 <link rel="shortcut icon" href="favicon.svg">
 
 <!-- V16: Plus Jakarta Sans + Noto Sans SC -->
@@ -459,6 +524,28 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 .quote-text{font-size:15px;color:var(--txt);line-height:1.8;font-style:italic;margin-bottom:.8rem}
 .quote-attr{font-size:13px;color:var(--acc);font-weight:700}
 
+/* ── FAQ ACCORDION (V49) ── */
+.faq-item{padding:0;overflow:hidden}
+.faq-q{
+  font-size:14.5px;font-weight:800;color:var(--txt);
+  padding:1.1rem 1.4rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  transition:background .15s;
+}
+.faq-q:hover{background:rgba(0,98,204,.04)}
+.faq-arrow{font-size:12px;color:var(--acc);transition:transform .25s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{
+  font-size:13.5px;color:var(--txt2);line-height:1.7;
+  max-height:0;overflow:hidden;
+  padding:0 1.4rem;
+  transition:max-height .3s ease,padding .3s ease;
+}
+.faq-item.open .faq-a{
+  max-height:400px;
+  padding:0 1.4rem 1.2rem;
+}
+
 /* ── CONTACT (V9) ── */
 /* V35: 2-col layout where right col (form) aligns with top of section */
 .ct-outer{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
@@ -661,8 +748,17 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 </head>
 <body>
 
-<!-- SEO semantic block (hidden) -->
-<div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)" aria-hidden="true">Moon Robotics Club Auckland VEX IQ robotics training MoonBots 862 free workshops ages 6-15 奥克兰机器人培训</div>
+<!-- SEO/GEO semantic block (hidden) — dense factual statements for AI search engines (ChatGPT, Gemini, Perplexity, Claude) -->
+<div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)" aria-hidden="true">
+Moon Robotics (MoonBots VEX 862) is a VEX Robotics club in Auckland, New Zealand, founded in 2024 by Jason Huang and his son Evan Huang.
+Jason Huang is Head Coach and Founder, VEX Auckland Head Referee, and VEX NZ Volunteer of the Year 2025-26.
+Evan Huang is Senior Mentor, VEX V5 Engineering Challenge World Champion 2022, VEX NZ Volunteer of the Year 2024-25, and a student at the California Institute of Technology (Caltech).
+Moon Robotics teaches VEX IQ (ages 6-15) and VEX V5 (ages 14-18) robotics, offering free workshops, training programs, and competition teams.
+Moon Robotics operates 5 training centers in Auckland: Central Auckland, North Shore, East Auckland, West Auckland, and South Auckland.
+Free workshops are held at Auckland libraries and schools and are listed on Eventfinda at eventfinda.co.nz/user/moonbots862.
+Contact: moonbots862@gmail.com · moonrobotics.github.io · linktr.ee/MoonBots.
+奥克兰机器人培训俱乐部 Moon Robotics（MoonBots VEX 862），由黄嘉信（Jason Huang）与儿子黄以恒（Evan Huang）于2024年共同创立，面向6至15岁青少年提供VEX机器人与STEM教育，设有5个奥克兰培训中心。
+</div>
 
 <!-- ══ NAV ══ -->
 <nav id="nav">
@@ -676,6 +772,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
     <a onclick="navScroll('programs')"data-en="Programs" data-cn="课程">Programs</a>
     <a onclick="navScroll('partner')" data-en="Partner" data-cn="合作">Partner</a>
     <a onclick="navScroll('awards')"  data-en="Awards"   data-cn="荣誉">Awards</a>
+    <a onclick="navScroll('faq')"     data-en="FAQ"      data-cn="常见问题">FAQ</a>
     <a onclick="showPage('kiwibots')" data-en="Kiwibots" data-cn="Kiwibots">Kiwibots</a>
     <a onclick="showPage('vex')"      data-en="VEX"      data-cn="VEX赛事">VEX</a>
     <a onclick="navScroll('contact')" data-en="Contact"  data-cn="联系我们">Contact</a>
@@ -691,6 +788,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
   <a onclick="mNavScroll('programs')"data-en="Programs" data-cn="课程">Programs</a>
   <a onclick="mNavScroll('partner')" data-en="Partner"  data-cn="合作">Partner</a>
   <a onclick="mNavScroll('awards')"  data-en="Awards"   data-cn="荣誉">Awards</a>
+  <a onclick="mNavScroll('faq')"     data-en="FAQ"      data-cn="常见问题">FAQ</a>
   <a onclick="mShowPage('kiwibots')" data-en="Kiwibots" data-cn="Kiwibots">Kiwibots</a>
   <a onclick="mShowPage('vex')"      data-en="VEX"      data-cn="VEX赛事">VEX</a>
   <a onclick="mNavScroll('contact')" data-en="Contact"  data-cn="联系我们">Contact</a>
@@ -1293,6 +1391,48 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 </section>
 <div class="divider"></div>
 
+<!-- V48: FAQ section — visible content matching FAQPage schema, for GEO/AI search engines -->
+<section class="sec surf" id="faq">
+<div class="si">
+  <div class="stag" data-en="FAQ" data-cn="常见问题">FAQ</div>
+  <h2 class="sttl" data-en="Frequently Asked Questions" data-cn="常见问题解答">Frequently Asked Questions</h2>
+  <div style="display:flex;flex-direction:column;gap:.8rem;margin-top:1.5rem">
+
+    <div class="card faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)" data-en="What is Moon Robotics Club?" data-cn="什么是 Moon Robotics 俱乐部？">What is Moon Robotics Club?<span class="faq-arrow">▾</span></div>
+      <div class="faq-a" data-en="Moon Robotics (MoonBots VEX 862) is a VEX Robotics club based in Auckland, New Zealand, founded in 2024 by father-son duo Jason Huang and Evan Huang. It provides STEM and robotics education for students aged 6 to 15 across 5 Auckland training centers." data-cn="Moon Robotics（MoonBots VEX 862）是一家位于新西兰奥克兰的VEX机器人俱乐部，由黄嘉信（Jason Huang）与儿子黄以恒（Evan Huang）于2024年共同创立，面向6至15岁青少年提供STEM与机器人教育，设有5个奥克兰培训中心。">Moon Robotics (MoonBots VEX 862) is a VEX Robotics club based in Auckland, New Zealand, founded in 2024 by father-son duo Jason Huang and Evan Huang. It provides STEM and robotics education for students aged 6 to 15 across 5 Auckland training centers.</div>
+    </div>
+
+    <div class="card faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)" data-en="Does Moon Robotics offer free robotics workshops in Auckland?" data-cn="Moon Robotics 是否提供奥克兰免费机器人公开课？">Does Moon Robotics offer free robotics workshops in Auckland?<span class="faq-arrow">▾</span></div>
+      <div class="faq-a" data-en="Yes. Moon Robotics runs free robotics workshops at Auckland libraries and schools for children aged 6 to 15 with no experience needed. Spaces are limited and workshops are listed on this website and on Eventfinda." data-cn="是的。Moon Robotics在奥克兰各图书馆与学校举办免费机器人公开课，适合6至15岁、无需基础的儿童参加。名额有限，公开课信息发布于本网站及Eventfinda平台。">Yes. Moon Robotics runs free robotics workshops at Auckland libraries and schools for children aged 6 to 15 with no experience needed. Spaces are limited and workshops are listed on this website and on Eventfinda.</div>
+    </div>
+
+    <div class="card faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)" data-en="Who founded Moon Robotics?" data-cn="Moon Robotics 由谁创立？">Who founded Moon Robotics?<span class="faq-arrow">▾</span></div>
+      <div class="faq-a" data-en="Moon Robotics was co-founded in 2024 by Jason Huang, Head Coach and VEX Auckland Head Referee (VEX NZ Volunteer of the Year 2025-26), and his son Evan Huang, Senior Mentor and VEX V5 Engineering Challenge World Champion 2022, now studying at Caltech." data-cn="Moon Robotics由黄嘉信（Jason Huang，主教练兼奥克兰VEX裁判长，VEX新西兰2025-26年度义工）与其子黄以恒（Evan Huang，高级导师，2022年VEX V5工程挑战赛世界冠军，现就读于加州理工学院）于2024年共同创立。">Moon Robotics was co-founded in 2024 by Jason Huang, Head Coach and VEX Auckland Head Referee (VEX NZ Volunteer of the Year 2025-26), and his son Evan Huang, Senior Mentor and VEX V5 Engineering Challenge World Champion 2022, now studying at Caltech.</div>
+    </div>
+
+    <div class="card faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)" data-en="What is the difference between VEX IQ and VEX V5?" data-cn="VEX IQ 与 VEX V5 有什么区别？">What is the difference between VEX IQ and VEX V5?<span class="faq-arrow">▾</span></div>
+      <div class="faq-a" data-en="VEX IQ is designed for ages 6–15 and uses plastic snap-together kits, focusing on teamwork, programming and design. VEX V5 is designed for ages 14–18 and uses metal parts with advanced programming and a full engineering notebook. Moon Robotics coaches both." data-cn="VEX IQ适合6–15岁，使用积木拼插套件，专注团队合作、编程与设计。VEX V5适合14–18岁，使用金属零件，需要高级编程与完整工程日志。Moon Robotics同时教授这两个组别。">VEX IQ is designed for ages 6–15 and uses plastic snap-together kits, focusing on teamwork, programming and design. VEX V5 is designed for ages 14–18 and uses metal parts with advanced programming and a full engineering notebook. Moon Robotics coaches both.</div>
+    </div>
+
+    <div class="card faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)" data-en="Where are Moon Robotics training locations in Auckland?" data-cn="Moon Robotics 的奥克兰培训中心在哪里？">Where are Moon Robotics training locations in Auckland?<span class="faq-arrow">▾</span></div>
+      <div class="faq-a" data-en="Moon Robotics operates 5 training centers across Auckland: Central Auckland (New Lynn, Avondale), North Shore (Albany, Silverdale), East Auckland (Howick, Botany), West Auckland (Henderson, Massey), and South Auckland (Manukau, Papakura)." data-cn="Moon Robotics在奥克兰设有5个培训中心：奥克兰中区（New Lynn、Avondale）、北岸（Albany、Silverdale）、东区（Howick、Botany）、西区（Henderson、Massey）、南区（Manukau、Papakura）。">Moon Robotics operates 5 training centers across Auckland: Central Auckland (New Lynn, Avondale), North Shore (Albany, Silverdale), East Auckland (Howick, Botany), West Auckland (Henderson, Massey), and South Auckland (Manukau, Papakura).</div>
+    </div>
+
+    <div class="card faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)" data-en="How can I contact Moon Robotics or book a free trial lesson?" data-cn="如何联系 Moon Robotics 或预约免费试课？">How can I contact Moon Robotics or book a free trial lesson?<span class="faq-arrow">▾</span></div>
+      <div class="faq-a" data-en="Parents can book a free trial lesson or make an enquiry via the contact form below, by emailing moonbots862@gmail.com, or via the Moon Robotics Linktree at linktr.ee/MoonBots." data-cn="家长可通过下方联系表单预约免费试课或咨询，也可发邮件至 moonbots862@gmail.com，或通过 Moon Robotics 的 Linktree（linktr.ee/MoonBots）联系我们。">Parents can book a free trial lesson or make an enquiry via the contact form below, by emailing moonbots862@gmail.com, or via the Moon Robotics Linktree at linktr.ee/MoonBots.</div>
+    </div>
+
+  </div>
+</div>
+</section>
+<div class="divider"></div>
+
 <!-- GET IN TOUCH (V35: form aligned to top of section) -->
 <section class="sec" id="contact">
 <div class="si">
@@ -1354,7 +1494,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
         </div>
         <div class="sp-chip" style="background:transparent;border:none">
           <img src="university-of-auckland-logo.png"
-               style="height:72px;width:auto;max-width:110px;object-fit:contain"
+               style="height:88px;width:auto;max-width:130px;object-fit:contain"
                alt="University of Auckland (UoA) logo — partner of Moon Robotics VEX 862"
                onerror="this.parentElement.style.display='none'">
         </div>
@@ -1388,7 +1528,7 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
         </div>
         <div class="sp-chip" style="background:transparent;border:none">
           <img src="acfn-auckland-chinese-fellowship-network-logo.png"
-               style="height:60px;width:auto;max-width:60px;object-fit:contain"
+               style="height:75px;width:auto;max-width:75px;object-fit:contain"
                alt="ACFN 奥克兰华人联谊会 Auckland Chinese Fellowship Network — community partner Moon Robotics"
                onerror="this.parentElement.style.display='none'">
         </div>
@@ -1703,6 +1843,13 @@ h2.sttl{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800;margin-bottom:1rem;
 
 <!-- ══ SCRIPTS ══ -->
 <script>
+// ── V49: FAQ ACCORDION TOGGLE ──
+function toggleFaq(qEl) {
+  var item = qEl.closest('.faq-item');
+  if (!item) return;
+  item.classList.toggle('open');
+}
+
 // ── PAGE NAVIGATION (V9 style, fixed for V13) ──
 var curPage = 'home';
 
@@ -1950,6 +2097,7 @@ var NAV_MAP = {
   'partner':  "navScroll('partner')",
   'locations':"navScroll('locations')",
   'awards':   "navScroll('awards')",
+  'faq':      "navScroll('faq')",
   'contact':  "navScroll('contact')"
 };
 var SUBPAGE_MAP = {
@@ -1958,7 +2106,7 @@ var SUBPAGE_MAP = {
 };
 
 // Sections in DOM order (only those that have nav links)
-var NAV_SECTION_IDS = ['robots','about','mentors','programs','partner','awards','contact'];
+var NAV_SECTION_IDS = ['robots','about','mentors','programs','partner','awards','faq','contact'];
 var NAV_HEIGHT = 62;
 var _navScrollLock = false;   // true while programmatic scroll is in progress
 var _navLockTimer  = null;
